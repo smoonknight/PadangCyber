@@ -1,0 +1,14 @@
+C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\bin\Debug\PadangCyberApp.exe.config
+C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\bin\Debug\PadangCyberApp.exe
+C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\bin\Debug\PadangCyberApp.pdb
+C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.csproj.AssemblyReference.cache
+C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.MainForm.resources
+C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.Properties.Resources.resources
+C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.csproj.GenerateResource.cache
+C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.csproj.CoreCompileInputs.cache
+C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.exe
+C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.pdb
+C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.View.DashboardUserControl.resources
+C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.OrderForm.resources
+C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.HeaderUserControl.resources
