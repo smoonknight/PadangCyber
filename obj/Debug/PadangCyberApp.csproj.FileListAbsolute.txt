@@ -9,6 +9,5 @@ C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\D
 C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.csproj.CoreCompileInputs.cache
 C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.exe
 C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.pdb
-C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.View.DashboardUserControl.resources
 C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.OrderForm.resources
-C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.HeaderUserControl.resources
+C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.View.UserControls.DashboardUserControl.resources

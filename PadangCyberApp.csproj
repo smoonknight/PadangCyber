@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,12 +50,6 @@
   <ItemGroup>
     <Compile Include="Classes\Controller\FormController.cs" />
     <Compile Include="Classes\Palette\ColorPalette.cs" />
-    <Compile Include="HeaderUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="HeaderUserControl.Designer.cs">
-      <DependentUpon>HeaderUserControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,10 +58,10 @@
     </Compile>
     <Compile Include="Model\OrderModel.cs" />
     <Compile Include="View\Template\CustomTableLayoutPanel\OrderLabel.cs" />
-    <Compile Include="View\UserControl\DashboardUserControl.cs">
+    <Compile Include="View\UserControls\DashboardUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\DashboardUserControl.Designer.cs">
+    <Compile Include="View\UserControls\DashboardUserControl.Designer.cs">
       <DependentUpon>DashboardUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -78,16 +74,13 @@
     </Compile>
     <Compile Include="View\Template\CustomButton\OrderBox.cs" />
     <Compile Include="View\Template\TextLabel\CommonLabel.cs" />
-    <EmbeddedResource Include="HeaderUserControl.resx">
-      <DependentUpon>HeaderUserControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form\OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControl\DashboardUserControl.resx">
+    <EmbeddedResource Include="View\UserControls\DashboardUserControl.resx">
       <DependentUpon>DashboardUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -120,7 +113,11 @@
     <None Include="Resources\Logo-PadangCyber.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ADO.Net\" />
     <Folder Include="View\Template\CustomLabel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

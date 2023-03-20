@@ -14,13 +14,13 @@ namespace PadangCyberApp
 {
     public partial class OrderForm : Form
     {
-        public OrderForm()
+        public OrderForm(string ID)
         {
             InitializeComponent();
-            Start();
+            Start(ID);
         }
 
-        void Start()
+        void Start(string ID)
         {
             TableLayoutPanel tableLayoutPanel = OrderTableLayoutPanel.Create("2", "20000", "Ayam Bakar", "40000");
             ListOrderPanel.Controls.Add(tableLayoutPanel);
@@ -30,5 +30,6 @@ namespace PadangCyberApp
         {
 
         }
+
     }
 }

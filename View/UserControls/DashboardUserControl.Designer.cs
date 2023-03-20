@@ -1,4 +1,4 @@
-﻿namespace PadangCyberApp.View
+﻿namespace PadangCyberApp.View.UserControls
 {
     partial class DashboardUserControl
     {
@@ -30,11 +30,11 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ListOrderFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.ListOrderFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -43,6 +43,7 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.AutoScroll = true;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
@@ -50,8 +51,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 160);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 170F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 290);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
@@ -62,17 +63,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(794, 139);
+            this.panel1.Size = new System.Drawing.Size(794, 94);
             this.panel1.TabIndex = 2;
-            // 
-            // ListOrderFlowLayoutPanel
-            // 
-            this.ListOrderFlowLayoutPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.ListOrderFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListOrderFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.ListOrderFlowLayoutPanel.Name = "ListOrderFlowLayoutPanel";
-            this.ListOrderFlowLayoutPanel.Size = new System.Drawing.Size(794, 139);
-            this.ListOrderFlowLayoutPanel.TabIndex = 5;
             // 
             // panel2
             // 
@@ -124,6 +116,17 @@
             this.label2.Text = "Good day isnt it?";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // ListOrderFlowLayoutPanel
+            // 
+            this.ListOrderFlowLayoutPanel.AutoScroll = true;
+            this.ListOrderFlowLayoutPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.ListOrderFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ListOrderFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.ListOrderFlowLayoutPanel.Name = "ListOrderFlowLayoutPanel";
+            this.ListOrderFlowLayoutPanel.Size = new System.Drawing.Size(794, 94);
+            this.ListOrderFlowLayoutPanel.TabIndex = 6;
+            this.ListOrderFlowLayoutPanel.WrapContents = false;
+            // 
             // DashboardUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -145,9 +148,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.FlowLayoutPanel ListOrderFlowLayoutPanel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.FlowLayoutPanel ListOrderFlowLayoutPanel;
     }
 }

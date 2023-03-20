@@ -11,13 +11,14 @@ namespace PadangCyberApp.View.Template.CustomTableLayoutPanel
 {
     internal class OrderTableLayoutPanel
     {
-        public static TableLayoutPanel Create(string quanitity, string unitPrice, string unitName, string totalPrice)
+        public static TableLayoutPanel Create(string quantity, string unitPrice, string unitName, string totalPrice)
         {
             TableLayoutPanel mainTableLayoutPanel = new TableLayoutPanel();
+            mainTableLayoutPanel.Controls.Clear();
             mainTableLayoutPanel.Dock = DockStyle.Top;
             mainTableLayoutPanel.Size = new Size(455, 35);
 
-            Label orderQuantityLabel = TextLabel.CommonLabel.Create(quanitity, 12);
+            Label orderQuantityLabel = TextLabel.CommonLabel.Create(quantity, 12);
             orderQuantityLabel.Dock = DockStyle.Fill;
             orderQuantityLabel.TextAlign = ContentAlignment.MiddleCenter;
             orderQuantityLabel.BackColor = ColorPalette.secondaryColor;
@@ -38,6 +39,7 @@ namespace PadangCyberApp.View.Template.CustomTableLayoutPanel
             Label unitNameLabel = TextLabel.CommonLabel.Create(unitName, 12);
             unitNameLabel.TextAlign = ContentAlignment.MiddleLeft;
             unitNameLabel.Dock = DockStyle.Fill;
+            unitNameLabel.AutoEllipsis = true;
 
             mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
             mainTableLayoutPanel.Controls.Add(unitNameLabel, 2, 0);
@@ -53,6 +55,7 @@ namespace PadangCyberApp.View.Template.CustomTableLayoutPanel
             Button editButton = new Button();
             editButton.Dock = DockStyle.Fill;
             editButton.FlatStyle = FlatStyle.Flat;
+            editButton.FlatAppearance.BorderSize = 0;
             editButton.Image = Properties.Resources.Logo_PadangCyber;
 
             mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 28));
@@ -61,6 +64,7 @@ namespace PadangCyberApp.View.Template.CustomTableLayoutPanel
             Button deleteButton = new Button();
             deleteButton.Dock = DockStyle.Fill;
             deleteButton.FlatStyle = FlatStyle.Flat;
+            deleteButton.FlatAppearance.BorderSize = 0;
             deleteButton.Image = Properties.Resources.Logo_PadangCyber;
 
             mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 28));
@@ -68,5 +72,14 @@ namespace PadangCyberApp.View.Template.CustomTableLayoutPanel
 
             return mainTableLayoutPanel;
         }
+
+        async void ModalLoader()
+        {
+            await Task.Run(() =>
+            {
+
+            });
+        }
+
     }
 }

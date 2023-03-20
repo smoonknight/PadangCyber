@@ -7,12 +7,14 @@ using System.Windows.Forms;
 using System.Drawing;
 using PadangCyberApp.View.Template.TextLabel;
 using PadangCyberApp.Classes.Palette;
+using System.Drawing.Printing;
+using PadangCyberApp.Properties;
 
 namespace PadangCyberApp.View.Template.CustomButton
 {
     internal class OrderBox
     {
-        public static FlowLayoutPanel Create
+        public TableLayoutPanel Create
         (
             string ID,
             string plan, 
@@ -23,7 +25,7 @@ namespace PadangCyberApp.View.Template.CustomButton
             string numberQueue
         )
         {
-            FlowLayoutPanel mainFlowLayoutPanel;
+            TableLayoutPanel mainTableLayoutPanel;
             Panel headerPanel;
             Panel customerInfoPanel;
             Panel orderInfoPanel;
@@ -35,34 +37,42 @@ namespace PadangCyberApp.View.Template.CustomButton
             Label timeOrderLabel;
             Label numberOrderLabel;
 
-            mainFlowLayoutPanel = new FlowLayoutPanel();
-            mainFlowLayoutPanel.Size = new Size(200, 120);
+            mainTableLayoutPanel = new TableLayoutPanel();
+            mainTableLayoutPanel.Size = new Size(200, 120);
+            mainTableLayoutPanel.BackColor = ColorPalette.whiteBackColor;
+
             #region header
             headerPanel = new Panel();
-            headerPanel.Size = new Size(190, 50);
+            headerPanel.Dock = DockStyle.Fill;
+            headerPanel.Margin = new Padding(0);
             headerPanel.BackColor = ColorPalette.secondaryColor;
             #endregion
-            mainFlowLayoutPanel.Controls.Add(headerPanel);
 
+            mainTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 50));
+            mainTableLayoutPanel.Controls.Add(headerPanel, 0, 0);
+
+            #region content header
             planPicture = new PictureBox();
             planPicture.Size = new Size(50, 50);
             planPicture.Dock = DockStyle.Left;
-            planPicture.BackColor = ColorPalette.secondaryColor;
+            planPicture.BackgroundImage = Resources.table;
+            planPicture.BackgroundImageLayout = ImageLayout.Stretch;
   
             headerPanel.Controls.Add(planPicture);
 
             totalPriceLabel = CommonLabel.Create(totalPrice, 12, FontStyle.Bold);
-            totalPriceLabel.Size = new Size(120, 50);
-            totalPriceLabel.Dock = DockStyle.Right;
+            totalPriceLabel.Dock = DockStyle.Fill;
             totalPriceLabel.TextAlign = ContentAlignment.MiddleRight;
             totalPriceLabel.ForeColor = ColorPalette.whiteForeColor;
 
             headerPanel.Controls.Add(totalPriceLabel);
+            #endregion
 
             customerInfoPanel = new Panel();
             customerInfoPanel.Size = new Size(192, 21);
 
-            mainFlowLayoutPanel.Controls.Add(customerInfoPanel);
+            mainTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20));
+            mainTableLayoutPanel.Controls.Add(customerInfoPanel, 0, 1);
 
             nameCustomerLabel = CommonLabel.Create(nameCustomer, 10, FontStyle.Bold);
             nameCustomerLabel.Dock = DockStyle.Left;
@@ -84,12 +94,14 @@ namespace PadangCyberApp.View.Template.CustomButton
             planLabel.Size = new Size(191, 18);
             planLabel.ForeColor = ColorPalette.blackForeColor;
 
-            mainFlowLayoutPanel.Controls.Add(planLabel);
+            mainTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20));
+            mainTableLayoutPanel.Controls.Add(planLabel, 0, 2);
 
             orderInfoPanel = new Panel();
             orderInfoPanel.Size = new Size(192, 21);
 
-            mainFlowLayoutPanel.Controls.Add(orderInfoPanel);
+            mainTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20));
+            mainTableLayoutPanel.Controls.Add(orderInfoPanel, 0, 3);
 
             timeOrderLabel = CommonLabel.Create(timeOrder, 9);
             timeOrderLabel.Dock = DockStyle.Left;
@@ -107,18 +119,18 @@ namespace PadangCyberApp.View.Template.CustomButton
 
             orderInfoPanel.Controls.Add(numberOrderLabel);
 
-            mainFlowLayoutPanel.Tag = ID;
+            mainTableLayoutPanel.Tag = ID;
 
-            mainFlowLayoutPanel.Click += new EventHandler(Submit_Click);
-
-            return mainFlowLayoutPanel;
+            mainTableLayoutPanel.Click += new EventHandler(Submit_Click);
+            return mainTableLayoutPanel;
         }
 
-        public static void Submit_Click(object sender, EventArgs e)
+        public void Submit_Click(object sender, EventArgs e)
         {
-            FlowLayoutPanel flowLayoutPanel = sender as FlowLayoutPanel;
+            TableLayoutPanel tableLayoutPanel = sender as TableLayoutPanel;
 
-            flowLayoutPanel.Size = new Size(122, 222);
+            OrderForm orderForm = new OrderForm(tableLayoutPanel.Tag.ToString());
+            orderForm.ShowDialog();
         }
     }
 }
