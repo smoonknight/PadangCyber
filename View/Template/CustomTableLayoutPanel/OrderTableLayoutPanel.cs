@@ -18,7 +18,7 @@ namespace PadangCyberApp.View.Template.CustomTableLayoutPanel
             mainTableLayoutPanel.Dock = DockStyle.Top;
             mainTableLayoutPanel.Size = new Size(455, 35);
 
-            Label orderQuantityLabel = TextLabel.CommonLabel.Create(quantity, 12);
+            Label orderQuantityLabel = CustomLabel.CommonLabel.Create(quantity, 12);
             orderQuantityLabel.Dock = DockStyle.Fill;
             orderQuantityLabel.TextAlign = ContentAlignment.MiddleCenter;
             orderQuantityLabel.BackColor = ColorPalette.secondaryColor;
@@ -28,7 +28,7 @@ namespace PadangCyberApp.View.Template.CustomTableLayoutPanel
             mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 28));
             mainTableLayoutPanel.Controls.Add(orderQuantityLabel, 0, 0);
 
-            Label unitPriceLabel = TextLabel.CommonLabel.Create($"Rp. {unitPrice}", 12);
+            Label unitPriceLabel = CustomLabel.CommonLabel.Create($"Rp. {unitPrice}", 12);
             unitPriceLabel.Dock = DockStyle.Fill;
             unitPriceLabel.TextAlign = ContentAlignment.MiddleCenter;
             unitPriceLabel.AutoSize = false;
@@ -36,7 +36,7 @@ namespace PadangCyberApp.View.Template.CustomTableLayoutPanel
             mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 120));
             mainTableLayoutPanel.Controls.Add(unitPriceLabel, 1, 0);
 
-            Label unitNameLabel = TextLabel.CommonLabel.Create(unitName, 12);
+            Label unitNameLabel = CustomLabel.CommonLabel.Create(unitName, 12);
             unitNameLabel.TextAlign = ContentAlignment.MiddleLeft;
             unitNameLabel.Dock = DockStyle.Fill;
             unitNameLabel.AutoEllipsis = true;
@@ -44,7 +44,7 @@ namespace PadangCyberApp.View.Template.CustomTableLayoutPanel
             mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
             mainTableLayoutPanel.Controls.Add(unitNameLabel, 2, 0);
 
-            Label orderTotalPriceLabel = TextLabel.CommonLabel.Create($"Rp. {totalPrice}", 12);
+            Label orderTotalPriceLabel = CustomLabel.CommonLabel.Create($"Rp. {totalPrice}", 12);
             orderTotalPriceLabel.Dock = DockStyle.Fill;
             orderTotalPriceLabel.TextAlign = ContentAlignment.MiddleCenter;
             orderTotalPriceLabel.AutoSize = false;

@@ -5,14 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
-using PadangCyberApp.View.Template.TextLabel;
+using PadangCyberApp.View.Template.CustomLabel;
 using PadangCyberApp.Classes.Palette;
+using PadangCyberApp.Classes.Dictionarys;
 using System.Drawing.Printing;
 using PadangCyberApp.Properties;
 
-namespace PadangCyberApp.View.Template.CustomButton
+namespace PadangCyberApp.View.Template.CustomTableLayoutPanel
 {
-    internal class OrderBox
+    internal class OrderCardTableLayoutPanel
     {
         public TableLayoutPanel Create
         (
@@ -39,6 +40,7 @@ namespace PadangCyberApp.View.Template.CustomButton
 
             mainTableLayoutPanel = new TableLayoutPanel();
             mainTableLayoutPanel.Size = new Size(200, 120);
+            mainTableLayoutPanel.Margin = new Padding(10);
             mainTableLayoutPanel.BackColor = ColorPalette.whiteBackColor;
 
             #region header
@@ -55,7 +57,7 @@ namespace PadangCyberApp.View.Template.CustomButton
             planPicture = new PictureBox();
             planPicture.Size = new Size(50, 50);
             planPicture.Dock = DockStyle.Left;
-            planPicture.BackgroundImage = Resources.table;
+            planPicture.BackgroundImage = ImageDictionary.getImage(plan);
             planPicture.BackgroundImageLayout = ImageLayout.Stretch;
   
             headerPanel.Controls.Add(planPicture);

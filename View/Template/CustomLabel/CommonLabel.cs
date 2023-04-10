@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 
-namespace PadangCyberApp.View.Template.TextLabel
+namespace PadangCyberApp.View.Template.CustomLabel
 {
     public class CommonLabel
     {

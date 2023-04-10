@@ -30,11 +30,13 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.InventoryButton = new System.Windows.Forms.Button();
+            this.ReportButton = new System.Windows.Forms.Button();
             this.DashboardButton = new System.Windows.Forms.Button();
+            this.OrderButton = new System.Windows.Forms.Button();
             this.dashboardUserControl1 = new PadangCyberApp.View.UserControls.DashboardUserControl();
+            this.orderUserControl1 = new PadangCyberApp.View.UserControls.OrderUserControl();
+            this.inventoryUserControl1 = new PadangCyberApp.View.UserControls.InventoryUserControl();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -62,10 +64,10 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Controls.Add(this.button3, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.button2, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.button1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.InventoryButton, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.ReportButton, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.DashboardButton, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.OrderButton, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(123, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -75,47 +77,33 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(554, 44);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // button3
+            // InventoryButton
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.Location = new System.Drawing.Point(417, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(134, 38);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Profile";
-            this.button3.UseVisualStyleBackColor = true;
+            this.InventoryButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.InventoryButton.FlatAppearance.BorderSize = 0;
+            this.InventoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.InventoryButton.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InventoryButton.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.InventoryButton.Location = new System.Drawing.Point(279, 3);
+            this.InventoryButton.Name = "InventoryButton";
+            this.InventoryButton.Size = new System.Drawing.Size(132, 38);
+            this.InventoryButton.TabIndex = 24;
+            this.InventoryButton.Text = "Inventory";
+            this.InventoryButton.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // ReportButton
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Location = new System.Drawing.Point(279, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(132, 38);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Report";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Location = new System.Drawing.Point(141, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 38);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Order";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ReportButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ReportButton.FlatAppearance.BorderSize = 0;
+            this.ReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ReportButton.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReportButton.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.ReportButton.Location = new System.Drawing.Point(417, 3);
+            this.ReportButton.Name = "ReportButton";
+            this.ReportButton.Size = new System.Drawing.Size(134, 38);
+            this.ReportButton.TabIndex = 23;
+            this.ReportButton.Text = "Report";
+            this.ReportButton.UseVisualStyleBackColor = true;
             // 
             // DashboardButton
             // 
@@ -127,9 +115,23 @@
             this.DashboardButton.Location = new System.Drawing.Point(3, 3);
             this.DashboardButton.Name = "DashboardButton";
             this.DashboardButton.Size = new System.Drawing.Size(132, 38);
-            this.DashboardButton.TabIndex = 0;
+            this.DashboardButton.TabIndex = 21;
             this.DashboardButton.Text = "Dashboard";
             this.DashboardButton.UseVisualStyleBackColor = true;
+            // 
+            // OrderButton
+            // 
+            this.OrderButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OrderButton.FlatAppearance.BorderSize = 0;
+            this.OrderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OrderButton.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OrderButton.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.OrderButton.Location = new System.Drawing.Point(141, 3);
+            this.OrderButton.Name = "OrderButton";
+            this.OrderButton.Size = new System.Drawing.Size(132, 38);
+            this.OrderButton.TabIndex = 14;
+            this.OrderButton.Text = "Order";
+            this.OrderButton.UseVisualStyleBackColor = true;
             // 
             // dashboardUserControl1
             // 
@@ -140,13 +142,33 @@
             this.dashboardUserControl1.Size = new System.Drawing.Size(800, 400);
             this.dashboardUserControl1.TabIndex = 1;
             // 
+            // orderUserControl1
+            // 
+            this.orderUserControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.orderUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.orderUserControl1.Location = new System.Drawing.Point(0, 0);
+            this.orderUserControl1.Name = "orderUserControl1";
+            this.orderUserControl1.Size = new System.Drawing.Size(800, 450);
+            this.orderUserControl1.TabIndex = 2;
+            // 
+            // inventoryUserControl1
+            // 
+            this.inventoryUserControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.inventoryUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.inventoryUserControl1.Location = new System.Drawing.Point(0, 50);
+            this.inventoryUserControl1.Name = "inventoryUserControl1";
+            this.inventoryUserControl1.Size = new System.Drawing.Size(800, 400);
+            this.inventoryUserControl1.TabIndex = 3;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.inventoryUserControl1);
             this.Controls.Add(this.dashboardUserControl1);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.orderUserControl1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(59)))), ((int)(((byte)(90)))));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -162,10 +184,12 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button DashboardButton;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private View.UserControls.DashboardUserControl dashboardUserControl1;
+        private View.UserControls.OrderUserControl orderUserControl1;
+        private System.Windows.Forms.Button ReportButton;
+        private System.Windows.Forms.Button DashboardButton;
+        private System.Windows.Forms.Button OrderButton;
+        private System.Windows.Forms.Button InventoryButton;
+        private View.UserControls.InventoryUserControl inventoryUserControl1;
     }
 }

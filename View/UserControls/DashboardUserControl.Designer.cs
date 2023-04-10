@@ -30,11 +30,11 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ListOrderFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.ListOrderFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -63,8 +63,19 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(794, 94);
+            this.panel1.Size = new System.Drawing.Size(794, 164);
             this.panel1.TabIndex = 2;
+            // 
+            // ListOrderFlowLayoutPanel
+            // 
+            this.ListOrderFlowLayoutPanel.AutoScroll = true;
+            this.ListOrderFlowLayoutPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.ListOrderFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ListOrderFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.ListOrderFlowLayoutPanel.Name = "ListOrderFlowLayoutPanel";
+            this.ListOrderFlowLayoutPanel.Size = new System.Drawing.Size(794, 164);
+            this.ListOrderFlowLayoutPanel.TabIndex = 6;
+            this.ListOrderFlowLayoutPanel.WrapContents = false;
             // 
             // panel2
             // 
@@ -115,17 +126,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Good day isnt it?";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // ListOrderFlowLayoutPanel
-            // 
-            this.ListOrderFlowLayoutPanel.AutoScroll = true;
-            this.ListOrderFlowLayoutPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.ListOrderFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListOrderFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.ListOrderFlowLayoutPanel.Name = "ListOrderFlowLayoutPanel";
-            this.ListOrderFlowLayoutPanel.Size = new System.Drawing.Size(794, 94);
-            this.ListOrderFlowLayoutPanel.TabIndex = 6;
-            this.ListOrderFlowLayoutPanel.WrapContents = false;
             // 
             // DashboardUserControl
             // 

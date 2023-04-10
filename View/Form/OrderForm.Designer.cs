@@ -86,7 +86,6 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.NumberTableLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -185,7 +184,6 @@
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel2);
-            this.splitContainer1.Panel2.Controls.Add(this.panel3);
             this.splitContainer1.Size = new System.Drawing.Size(800, 518);
             this.splitContainer1.SplitterDistance = 334;
             this.splitContainer1.SplitterWidth = 2;
@@ -512,7 +510,7 @@
             this.tableLayoutPanel2.Controls.Add(this.panel5, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
@@ -520,7 +518,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(461, 518);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(464, 518);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
             // panel6
@@ -531,7 +529,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(3, 441);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(455, 24);
+            this.panel6.Size = new System.Drawing.Size(458, 24);
             this.panel6.TabIndex = 12;
             // 
             // ProfitLabel
@@ -571,7 +569,7 @@
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(455, 44);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(458, 44);
             this.tableLayoutPanel3.TabIndex = 10;
             // 
             // AddOrderButton
@@ -583,7 +581,7 @@
             this.AddOrderButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(92)))), ((int)(((byte)(101)))));
             this.AddOrderButton.Location = new System.Drawing.Point(3, 3);
             this.AddOrderButton.Name = "AddOrderButton";
-            this.AddOrderButton.Size = new System.Drawing.Size(221, 38);
+            this.AddOrderButton.Size = new System.Drawing.Size(223, 38);
             this.AddOrderButton.TabIndex = 1;
             this.AddOrderButton.Text = "Add Order";
             this.AddOrderButton.UseVisualStyleBackColor = false;
@@ -597,12 +595,12 @@
             this.PayTableLayoutPanel.Controls.Add(this.label3, 1, 0);
             this.PayTableLayoutPanel.Controls.Add(this.label2, 0, 0);
             this.PayTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PayTableLayoutPanel.Location = new System.Drawing.Point(230, 3);
+            this.PayTableLayoutPanel.Location = new System.Drawing.Point(232, 3);
             this.PayTableLayoutPanel.Name = "PayTableLayoutPanel";
             this.PayTableLayoutPanel.RowCount = 1;
             this.PayTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.PayTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.PayTableLayoutPanel.Size = new System.Drawing.Size(222, 38);
+            this.PayTableLayoutPanel.Size = new System.Drawing.Size(223, 38);
             this.PayTableLayoutPanel.TabIndex = 2;
             // 
             // label3
@@ -613,7 +611,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(114, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 38);
+            this.label3.Size = new System.Drawing.Size(106, 38);
             this.label3.TabIndex = 3;
             this.label3.Text = "Pay";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -638,7 +636,7 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(3, 33);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(455, 24);
+            this.panel9.Size = new System.Drawing.Size(458, 24);
             this.panel9.TabIndex = 7;
             // 
             // NameCustomerLabel
@@ -649,7 +647,7 @@
             this.NameCustomerLabel.ForeColor = System.Drawing.Color.Black;
             this.NameCustomerLabel.Location = new System.Drawing.Point(119, 0);
             this.NameCustomerLabel.Name = "NameCustomerLabel";
-            this.NameCustomerLabel.Size = new System.Drawing.Size(336, 24);
+            this.NameCustomerLabel.Size = new System.Drawing.Size(339, 24);
             this.NameCustomerLabel.TabIndex = 4;
             this.NameCustomerLabel.Text = "[name]";
             this.NameCustomerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -673,7 +671,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(3, 63);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(455, 372);
+            this.panel5.Size = new System.Drawing.Size(458, 372);
             this.panel5.TabIndex = 2;
             // 
             // ListOrderPanel
@@ -682,7 +680,7 @@
             this.ListOrderPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ListOrderPanel.Location = new System.Drawing.Point(0, 0);
             this.ListOrderPanel.Name = "ListOrderPanel";
-            this.ListOrderPanel.Size = new System.Drawing.Size(455, 372);
+            this.ListOrderPanel.Size = new System.Drawing.Size(458, 372);
             this.ListOrderPanel.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -698,7 +696,7 @@
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(455, 24);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(458, 24);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
             // panel10
@@ -706,9 +704,9 @@
             this.panel10.Controls.Add(this.NumberOrderLabel);
             this.panel10.Controls.Add(this.label7);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(230, 3);
+            this.panel10.Location = new System.Drawing.Point(232, 3);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(222, 18);
+            this.panel10.Size = new System.Drawing.Size(223, 18);
             this.panel10.TabIndex = 6;
             // 
             // NumberOrderLabel
@@ -718,7 +716,7 @@
             this.NumberOrderLabel.ForeColor = System.Drawing.Color.Black;
             this.NumberOrderLabel.Location = new System.Drawing.Point(81, 0);
             this.NumberOrderLabel.Name = "NumberOrderLabel";
-            this.NumberOrderLabel.Size = new System.Drawing.Size(141, 18);
+            this.NumberOrderLabel.Size = new System.Drawing.Size(142, 18);
             this.NumberOrderLabel.TabIndex = 4;
             this.NumberOrderLabel.Text = "0";
             this.NumberOrderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -742,7 +740,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(3, 3);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(221, 18);
+            this.panel8.Size = new System.Drawing.Size(223, 18);
             this.panel8.TabIndex = 4;
             // 
             // NumberTableLabel
@@ -752,7 +750,7 @@
             this.NumberTableLabel.ForeColor = System.Drawing.Color.Black;
             this.NumberTableLabel.Location = new System.Drawing.Point(77, 0);
             this.NumberTableLabel.Name = "NumberTableLabel";
-            this.NumberTableLabel.Size = new System.Drawing.Size(144, 18);
+            this.NumberTableLabel.Size = new System.Drawing.Size(146, 18);
             this.NumberTableLabel.TabIndex = 4;
             this.NumberTableLabel.Text = "0";
             this.NumberTableLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -768,15 +766,6 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "No. Table : ";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.LightGray;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(3, 518);
-            this.panel3.TabIndex = 4;
             // 
             // OrderForm
             // 
@@ -827,7 +816,6 @@
         private System.Windows.Forms.Button HumbergerButton;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel ListFoodTableLayoutPanel;
         private System.Windows.Forms.Panel panel4;

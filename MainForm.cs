@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PadangCyberApp.View.UserControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,16 @@ namespace PadangCyberApp
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void DashboardButton_Click(object sender, EventArgs e)
+        {
+            dashboardUserControl1.BringToFront();
+        }
+
+        private void OrderButton_Click(object sender, EventArgs e)
+        {
+            orderUserControl1.BringToFront();
         }
     }
 }
