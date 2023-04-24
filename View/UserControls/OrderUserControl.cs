@@ -16,14 +16,13 @@ namespace PadangCyberApp.View.UserControls
         public OrderUserControl()
         {
             InitializeComponent();
-            Start();
         }
 
         void Start()
         {
             for (int i = 0; i < 10; i++)
             {
-                TableLayoutPanel flowLayoutPanel = new OrderCardTableLayoutPanel().Create("krsss", "Dine in", "Rp. 10000", "Satria", "12", "11:00", "12");
+                TableLayoutPanel flowLayoutPanel = new OrderCardTableLayoutPanel("krsss", "Dine in", "Rp. 10000", "Satria", "12", "11:00", "12");
                 OrderFlowLayoutPanel.Controls.Add(flowLayoutPanel);
             }
         }

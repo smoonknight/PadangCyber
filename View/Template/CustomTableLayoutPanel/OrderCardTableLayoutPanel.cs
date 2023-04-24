@@ -7,15 +7,25 @@ using System.Windows.Forms;
 using System.Drawing;
 using PadangCyberApp.View.Template.CustomLabel;
 using PadangCyberApp.Classes.Palette;
-using PadangCyberApp.Classes.Dictionarys;
+using PadangCyberApp.Classes.Strings;
 using System.Drawing.Printing;
-using PadangCyberApp.Properties;
+using PadangCyberApp.View.Forms;
 
 namespace PadangCyberApp.View.Template.CustomTableLayoutPanel
 {
-    internal class OrderCardTableLayoutPanel
+    internal class OrderCardTableLayoutPanel : TableLayoutPanel
     {
-        public TableLayoutPanel Create
+        Panel headerPanel;
+        Panel customerInfoPanel;
+        Panel orderInfoPanel;
+        PictureBox planPicture;
+        Label totalPriceLabel;
+        Label nameCustomerLabel;
+        Label numberTableLabel;
+        CommonLabel planLabel;
+        Label timeOrderLabel;
+        Label numberOrderLabel;
+        public OrderCardTableLayoutPanel
         (
             string ID,
             string plan, 
@@ -26,22 +36,11 @@ namespace PadangCyberApp.View.Template.CustomTableLayoutPanel
             string numberQueue
         )
         {
-            TableLayoutPanel mainTableLayoutPanel;
-            Panel headerPanel;
-            Panel customerInfoPanel;
-            Panel orderInfoPanel;
-            PictureBox planPicture;
-            Label totalPriceLabel;
-            Label nameCustomerLabel;
-            Label numberTableLabel;
-            Label planLabel;
-            Label timeOrderLabel;
-            Label numberOrderLabel;
 
-            mainTableLayoutPanel = new TableLayoutPanel();
-            mainTableLayoutPanel.Size = new Size(200, 120);
-            mainTableLayoutPanel.Margin = new Padding(10);
-            mainTableLayoutPanel.BackColor = ColorPalette.whiteBackColor;
+
+            Size = new Size(200, 120);
+            Margin = new Padding(10);
+            BackColor = ColorPalette.whiteBackColor;
 
             #region header
             headerPanel = new Panel();
@@ -50,19 +49,19 @@ namespace PadangCyberApp.View.Template.CustomTableLayoutPanel
             headerPanel.BackColor = ColorPalette.secondaryColor;
             #endregion
 
-            mainTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 50));
-            mainTableLayoutPanel.Controls.Add(headerPanel, 0, 0);
+            RowStyles.Add(new RowStyle(SizeType.Absolute, 50));
+            Controls.Add(headerPanel, 0, 0);
 
             #region content header
             planPicture = new PictureBox();
             planPicture.Size = new Size(50, 50);
             planPicture.Dock = DockStyle.Left;
-            planPicture.BackgroundImage = ImageDictionary.getImage(plan);
+            planPicture.BackgroundImage = ImageDictionary.dine[plan];
             planPicture.BackgroundImageLayout = ImageLayout.Stretch;
   
             headerPanel.Controls.Add(planPicture);
 
-            totalPriceLabel = CommonLabel.Create(totalPrice, 12, FontStyle.Bold);
+            totalPriceLabel = new CommonLabel(totalPrice, 12, FontStyle.Bold);
             totalPriceLabel.Dock = DockStyle.Fill;
             totalPriceLabel.TextAlign = ContentAlignment.MiddleRight;
             totalPriceLabel.ForeColor = ColorPalette.whiteForeColor;
@@ -73,10 +72,10 @@ namespace PadangCyberApp.View.Template.CustomTableLayoutPanel
             customerInfoPanel = new Panel();
             customerInfoPanel.Size = new Size(192, 21);
 
-            mainTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20));
-            mainTableLayoutPanel.Controls.Add(customerInfoPanel, 0, 1);
+            RowStyles.Add(new RowStyle(SizeType.Absolute, 20));
+            Controls.Add(customerInfoPanel, 0, 1);
 
-            nameCustomerLabel = CommonLabel.Create(nameCustomer, 10, FontStyle.Bold);
+            nameCustomerLabel = new CommonLabel(nameCustomer, 10, FontStyle.Bold);
             nameCustomerLabel.Dock = DockStyle.Left;
             nameCustomerLabel.Size = new Size(100, 21);
             nameCustomerLabel.TextAlign = ContentAlignment.MiddleLeft;
@@ -84,7 +83,7 @@ namespace PadangCyberApp.View.Template.CustomTableLayoutPanel
 
             customerInfoPanel.Controls.Add(nameCustomerLabel);
 
-            numberTableLabel = CommonLabel.Create(numberTable, 10, FontStyle.Bold);
+            numberTableLabel = new CommonLabel(numberTable, 10, FontStyle.Bold);
             numberTableLabel.Dock = DockStyle.Right;
             numberTableLabel.Size = new Size(50, 21);
             numberTableLabel.TextAlign = ContentAlignment.MiddleRight;
@@ -92,20 +91,20 @@ namespace PadangCyberApp.View.Template.CustomTableLayoutPanel
 
             customerInfoPanel.Controls.Add(numberTableLabel);
 
-            planLabel = CommonLabel.Create(plan, 9);
+            planLabel = new CommonLabel(plan, 9);
             planLabel.Size = new Size(191, 18);
             planLabel.ForeColor = ColorPalette.blackForeColor;
 
-            mainTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20));
-            mainTableLayoutPanel.Controls.Add(planLabel, 0, 2);
+            RowStyles.Add(new RowStyle(SizeType.Absolute, 20));
+            Controls.Add(planLabel, 0, 2);
 
             orderInfoPanel = new Panel();
             orderInfoPanel.Size = new Size(192, 21);
 
-            mainTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20));
-            mainTableLayoutPanel.Controls.Add(orderInfoPanel, 0, 3);
+            RowStyles.Add(new RowStyle(SizeType.Absolute, 20));
+            Controls.Add(orderInfoPanel, 0, 3);
 
-            timeOrderLabel = CommonLabel.Create(timeOrder, 9);
+            timeOrderLabel = new CommonLabel(timeOrder, 9);
             timeOrderLabel.Dock = DockStyle.Left;
             timeOrderLabel.Size = new Size(100, 21);
             timeOrderLabel.TextAlign = ContentAlignment.MiddleLeft;
@@ -113,7 +112,7 @@ namespace PadangCyberApp.View.Template.CustomTableLayoutPanel
 
             orderInfoPanel.Controls.Add(timeOrderLabel);
 
-            numberOrderLabel = CommonLabel.Create(numberQueue, 9);
+            numberOrderLabel = new CommonLabel(numberQueue, 9);
             numberOrderLabel.Dock = DockStyle.Right;
             numberOrderLabel.Size = new Size(50, 21);
             numberOrderLabel.TextAlign = ContentAlignment.MiddleRight;
@@ -121,10 +120,9 @@ namespace PadangCyberApp.View.Template.CustomTableLayoutPanel
 
             orderInfoPanel.Controls.Add(numberOrderLabel);
 
-            mainTableLayoutPanel.Tag = ID;
+            Tag = ID;
 
-            mainTableLayoutPanel.Click += new EventHandler(Submit_Click);
-            return mainTableLayoutPanel;
+            Click += new EventHandler(Submit_Click);
         }
 
         public void Submit_Click(object sender, EventArgs e)

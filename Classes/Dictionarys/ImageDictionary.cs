@@ -6,21 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PadangCyberApp.Classes.Dictionarys
+namespace PadangCyberApp.Classes.Strings
 {
     public class ImageDictionary
     {
-        public static Bitmap getImage(string name)
+        public static Dictionary<string, Bitmap> dine = new Dictionary<string, Bitmap>()
         {
-            Dictionary<string, Bitmap> imageDictionary = new Dictionary<string, Bitmap>();
-            imageDictionary.Add("Dine in", Resources.dine_in);
-            imageDictionary.Add("Take away", Resources.take_away);
-
-            if (imageDictionary[name] == null)
-            {
-                return null;
-            }
-            return imageDictionary[name];
-        }
+            {"Dine in", Resources.dine_in},
+            {"Take away", Resources.take_away}
+        };
     }
 }

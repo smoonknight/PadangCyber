@@ -16,5 +16,14 @@ namespace PadangCyberApp.Classes.Controller
             T model = await new TaskFactory().StartNew(() => JsonConvert.DeserializeObject<T>(json));
             return model;
         }
+
+        public static bool isJsonNull(string json)
+        {
+            if (json == "{}")
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

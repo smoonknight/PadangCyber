@@ -8,16 +8,24 @@ using System.Drawing;
 
 namespace PadangCyberApp.View.Template.CustomLabel
 {
-    public class CommonLabel
+    public class CommonLabel : Label
     {
-        public static Label Create(string text, int emSize, FontStyle fontStyle = FontStyle.Regular)
+        public CommonLabel()
         {
-            Label commonLabel = new Label();
-            commonLabel.Text = text;
-            commonLabel.AutoSize = false;
-            commonLabel.Font = new Font("Century Schoolbook", emSize, fontStyle);
-            
-            return commonLabel;
+            AutoSize = false;
+            Font = new Font("Century Schoolbook", 12, FontStyle.Regular);
+        }
+
+        public CommonLabel(int emSize, FontStyle fontStyle = FontStyle.Regular)
+        {
+            AutoSize = false;
+            Font = new Font("Century Schoolbook", emSize, fontStyle);
+        }
+        public CommonLabel(string text, int emSize = 12, FontStyle fontStyle = FontStyle.Regular)
+        {
+            Text = text;
+            AutoSize = false;
+            Font = new Font("Century Schoolbook", emSize, fontStyle);
         }
     }
 }

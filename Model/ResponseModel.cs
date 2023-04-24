@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PadangCyberApp.Model
 {
-    public class TesModel
+    class ResponseModel
     {
-        public string name { get; set; }
-        public string uniqueId { get; set; }
+        public string status { get; set; }
+        public string message { get; set; }
     }
 }

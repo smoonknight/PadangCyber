@@ -1,4 +1,4 @@
-﻿namespace PadangCyberApp
+﻿namespace PadangCyberApp.View.Forms
 {
     partial class OrderForm
     {
@@ -41,14 +41,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.CategoryFoodFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.Placebox = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -86,6 +83,7 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.NumberTableLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.dishPanel1 = new PadangCyberApp.View.Template.CustomPanel.DishPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -143,7 +141,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(147, 34);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Order";
+            this.label1.Text = "Pesanan";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // HumbergerButton
@@ -252,9 +250,7 @@
             // CategoryFoodFlowLayoutPanel
             // 
             this.CategoryFoodFlowLayoutPanel.AutoScroll = true;
-            this.CategoryFoodFlowLayoutPanel.Controls.Add(this.Placebox);
             this.CategoryFoodFlowLayoutPanel.Controls.Add(this.button1);
-            this.CategoryFoodFlowLayoutPanel.Controls.Add(this.button2);
             this.CategoryFoodFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.CategoryFoodFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.CategoryFoodFlowLayoutPanel.Name = "CategoryFoodFlowLayoutPanel";
@@ -262,42 +258,22 @@
             this.CategoryFoodFlowLayoutPanel.TabIndex = 1;
             this.CategoryFoodFlowLayoutPanel.WrapContents = false;
             // 
-            // Placebox
-            // 
-            this.Placebox.AutoSize = true;
-            this.Placebox.Location = new System.Drawing.Point(3, 3);
-            this.Placebox.Name = "Placebox";
-            this.Placebox.Size = new System.Drawing.Size(113, 23);
-            this.Placebox.TabIndex = 0;
-            this.Placebox.Text = "DouchDouchDouch";
-            this.Placebox.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             this.button1.AutoSize = true;
-            this.button1.Location = new System.Drawing.Point(122, 3);
+            this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 23);
             this.button1.TabIndex = 1;
             this.button1.Text = "DouchDouchDouch";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
-            // 
-            this.button2.AutoSize = true;
-            this.button2.Location = new System.Drawing.Point(241, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(113, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "DouchDouchDouch";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.button3);
             this.flowLayoutPanel1.Controls.Add(this.button4);
             this.flowLayoutPanel1.Controls.Add(this.button5);
-            this.flowLayoutPanel1.Controls.Add(this.button6);
+            this.flowLayoutPanel1.Controls.Add(this.dishPanel1);
             this.flowLayoutPanel1.Controls.Add(this.button7);
             this.flowLayoutPanel1.Controls.Add(this.button8);
             this.flowLayoutPanel1.Controls.Add(this.button9);
@@ -347,18 +323,9 @@
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(246, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 75);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(3, 84);
+            this.button7.Location = new System.Drawing.Point(3, 114);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 75);
             this.button7.TabIndex = 9;
@@ -367,7 +334,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(84, 84);
+            this.button8.Location = new System.Drawing.Point(84, 114);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 75);
             this.button8.TabIndex = 10;
@@ -376,7 +343,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(165, 84);
+            this.button9.Location = new System.Drawing.Point(165, 114);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(75, 75);
             this.button9.TabIndex = 11;
@@ -385,7 +352,7 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(246, 84);
+            this.button10.Location = new System.Drawing.Point(246, 114);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(75, 75);
             this.button10.TabIndex = 12;
@@ -394,7 +361,7 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(3, 165);
+            this.button11.Location = new System.Drawing.Point(3, 195);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(75, 75);
             this.button11.TabIndex = 13;
@@ -403,7 +370,7 @@
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(84, 165);
+            this.button12.Location = new System.Drawing.Point(84, 195);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(75, 75);
             this.button12.TabIndex = 14;
@@ -412,7 +379,7 @@
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(165, 165);
+            this.button13.Location = new System.Drawing.Point(165, 195);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(75, 75);
             this.button13.TabIndex = 15;
@@ -421,7 +388,7 @@
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(246, 165);
+            this.button14.Location = new System.Drawing.Point(246, 195);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(75, 75);
             this.button14.TabIndex = 16;
@@ -430,7 +397,7 @@
             // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(3, 246);
+            this.button15.Location = new System.Drawing.Point(3, 276);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(75, 75);
             this.button15.TabIndex = 17;
@@ -439,7 +406,7 @@
             // 
             // button16
             // 
-            this.button16.Location = new System.Drawing.Point(84, 246);
+            this.button16.Location = new System.Drawing.Point(84, 276);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(75, 75);
             this.button16.TabIndex = 18;
@@ -448,7 +415,7 @@
             // 
             // button17
             // 
-            this.button17.Location = new System.Drawing.Point(165, 246);
+            this.button17.Location = new System.Drawing.Point(165, 276);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(75, 75);
             this.button17.TabIndex = 19;
@@ -457,7 +424,7 @@
             // 
             // button18
             // 
-            this.button18.Location = new System.Drawing.Point(246, 246);
+            this.button18.Location = new System.Drawing.Point(246, 276);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(75, 75);
             this.button18.TabIndex = 20;
@@ -466,7 +433,7 @@
             // 
             // button19
             // 
-            this.button19.Location = new System.Drawing.Point(3, 327);
+            this.button19.Location = new System.Drawing.Point(3, 357);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(75, 75);
             this.button19.TabIndex = 21;
@@ -475,7 +442,7 @@
             // 
             // button20
             // 
-            this.button20.Location = new System.Drawing.Point(84, 327);
+            this.button20.Location = new System.Drawing.Point(84, 357);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(75, 75);
             this.button20.TabIndex = 22;
@@ -484,7 +451,7 @@
             // 
             // button21
             // 
-            this.button21.Location = new System.Drawing.Point(165, 327);
+            this.button21.Location = new System.Drawing.Point(165, 357);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(75, 75);
             this.button21.TabIndex = 23;
@@ -493,7 +460,7 @@
             // 
             // button22
             // 
-            this.button22.Location = new System.Drawing.Point(246, 327);
+            this.button22.Location = new System.Drawing.Point(246, 357);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(75, 75);
             this.button22.TabIndex = 24;
@@ -583,7 +550,7 @@
             this.AddOrderButton.Name = "AddOrderButton";
             this.AddOrderButton.Size = new System.Drawing.Size(223, 38);
             this.AddOrderButton.TabIndex = 1;
-            this.AddOrderButton.Text = "Add Order";
+            this.AddOrderButton.Text = "Tambah Pesanan";
             this.AddOrderButton.UseVisualStyleBackColor = false;
             // 
             // PayTableLayoutPanel
@@ -613,7 +580,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 38);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Pay";
+            this.label3.Text = "Bayar";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -645,9 +612,9 @@
             this.NameCustomerLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NameCustomerLabel.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameCustomerLabel.ForeColor = System.Drawing.Color.Black;
-            this.NameCustomerLabel.Location = new System.Drawing.Point(119, 0);
+            this.NameCustomerLabel.Location = new System.Drawing.Point(125, 0);
             this.NameCustomerLabel.Name = "NameCustomerLabel";
-            this.NameCustomerLabel.Size = new System.Drawing.Size(339, 24);
+            this.NameCustomerLabel.Size = new System.Drawing.Size(333, 24);
             this.NameCustomerLabel.TabIndex = 4;
             this.NameCustomerLabel.Text = "[name]";
             this.NameCustomerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -659,9 +626,9 @@
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(0, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(119, 24);
+            this.label8.Size = new System.Drawing.Size(125, 24);
             this.label8.TabIndex = 3;
-            this.label8.Text = "Name Customer : ";
+            this.label8.Text = "Nama Pelanggan : ";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel5
@@ -764,8 +731,15 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 18);
             this.label5.TabIndex = 3;
-            this.label5.Text = "No. Table : ";
+            this.label5.Text = "No. Meja : ";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // dishPanel1
+            // 
+            this.dishPanel1.Location = new System.Drawing.Point(246, 3);
+            this.dishPanel1.Name = "dishPanel1";
+            this.dishPanel1.Size = new System.Drawing.Size(75, 105);
+            this.dishPanel1.TabIndex = 25;
             // 
             // OrderForm
             // 
@@ -781,6 +755,7 @@
             this.Name = "OrderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Order";
+            this.Load += new System.EventHandler(this.OrderForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -824,14 +799,11 @@
         private System.Windows.Forms.TextBox SearchTextBox;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.FlowLayoutPanel CategoryFoodFlowLayoutPanel;
-        private System.Windows.Forms.Button Placebox;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
@@ -867,5 +839,6 @@
         private System.Windows.Forms.Label NumberOrderLabel;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel ListOrderPanel;
+        private Template.CustomPanel.DishPanel dishPanel1;
     }
 }

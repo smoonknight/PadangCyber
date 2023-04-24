@@ -11,14 +11,8 @@ namespace PadangCyberApp.Classes.Controller
     {
         private static readonly HttpClient client = new HttpClient();
 
-        public static async Task<string> Post(string URL, string name, string uniqueId)
+        public static async Task<string> Post(string URL, Dictionary<string, string> values)
         {
-            var values = new Dictionary<string, string>
-            {
-                {"name",  name},
-                {"uniqueId", uniqueId }
-            };
-
             var content = new FormUrlEncodedContent(values);
 
             var response = await client.PostAsync(URL, content);
@@ -32,7 +26,13 @@ namespace PadangCyberApp.Classes.Controller
         {
             var response = await client.GetAsync(URL);
             var responseString = await response.Content.ReadAsStringAsync();
+            return responseString;
+        }
 
+        public static async Task<string> Delete(string URL)
+        {
+            var response = await client.DeleteAsync(URL);
+            var responseString = await response.Content.ReadAsStringAsync();
             return responseString;
         }
     }

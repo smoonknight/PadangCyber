@@ -15,5 +15,7 @@ namespace PadangCyberApp.Classes.Palette
         public static Color whiteBackColor = Color.White;
         public static Color whiteForeColor = Color.White;
         public static Color blackForeColor = Color.Black;
+        public static Color failedAlertColor = Color.FromArgb(214, 48, 49);
+        public static Color successAlertColor = Color.FromArgb(0, 184, 148);
     }
 }
