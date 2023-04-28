@@ -16,9 +16,23 @@ namespace PadangCyberApp.View.Forms
 {
     public partial class CreateDishForm : Form
     {
-        readonly string _categoryId;
+        string _categoryUniqueId;
 
-        string uniqueId;
+        string _categoryId;
+
+        string CategoryUniqueId
+        {
+            get
+            {
+                return _categoryUniqueId;
+            }
+            set
+            {
+                string codeProduct = value + _codeDish;
+                dishPanel1.codeDishCommonLabel.Text = codeProduct;
+                _categoryUniqueId = value;
+            }
+        }
 
         string _nameDish;
 
@@ -44,7 +58,7 @@ namespace PadangCyberApp.View.Forms
             }
             set
             {
-                string codeProduct = uniqueId + value;
+                string codeProduct = _categoryUniqueId + value;
                 dishPanel1.codeDishCommonLabel.Text = codeProduct;
                 _codeDish = value;
             }
@@ -59,12 +73,12 @@ namespace PadangCyberApp.View.Forms
             }
             set
             {
-                dishPanel1.dishButton.Image = value;
+                dishPanel1.dishButton.BackgroundImage = value;
                 _imageDish = value;
             }
         }
 
-        public CreateDishForm(string categoryId = "")
+        public CreateDishForm(string categoryId = null)
         {
             InitializeComponent();
             _categoryId = categoryId;
@@ -72,16 +86,30 @@ namespace PadangCyberApp.View.Forms
 
         private async void CreateDishForm_Load(object sender, EventArgs e)
         {
+            string json;
+            ComboBoxItem comboBoxItem;
             if (_categoryId != null)
             {
-                string json = await WebServiceController.Get($"{URLWebService.Get.category}/{_categoryId}");
+                json = await WebServiceController.Get($"{URLWebService.Get.category}/{_categoryId}");
                 CategoryModel categoryModel = await JsonController.JsonConvertDeserializeAsync<CategoryModel>(json);
 
                 categoryComboBox.Items.Add(new ComboBoxItem(categoryModel.categoryId, categoryModel.uniqueId,$"{categoryModel.name} - {categoryModel.uniqueId}"));
                 categoryComboBox.SelectedIndex = 0;
-                ComboBoxItem comboBoxItem = categoryComboBox.SelectedItem as ComboBoxItem;
-                uniqueId = comboBoxItem.uniqueId;
+                comboBoxItem = categoryComboBox.SelectedItem as ComboBoxItem;
+                _categoryId = comboBoxItem.value;
+                return;
             }
+            json = await WebServiceController.Get(URLWebService.Get.category);
+            CategoryModel[] childrensOfCategory = await JsonController.JsonConvertDeserializeAsync<CategoryModel[]>(json);
+
+            foreach (var categoryModel in childrensOfCategory)
+            {
+                categoryComboBox.Items.Add(new ComboBoxItem(categoryModel.categoryId, categoryModel.uniqueId, $"{categoryModel.name} - {categoryModel.uniqueId}"));
+            }
+            categoryComboBox.SelectedIndex = 0;
+            comboBoxItem = categoryComboBox.SelectedItem as ComboBoxItem;
+            ImageDish = dishPanel1.dishButton.BackgroundImage;
+            _categoryId = comboBoxItem.value;
         }
 
         private void NameTextBox_TextChanged(object sender, EventArgs e)
@@ -98,27 +126,37 @@ namespace PadangCyberApp.View.Forms
 
         private void CategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!(sender is ComboBoxItem comboBoxItem))
-            {
-                return;
-            }
-            uniqueId = comboBoxItem.uniqueId;
+            ComboBoxItem comboBoxItem = categoryComboBox.SelectedItem as ComboBoxItem;
+            CategoryUniqueId = comboBoxItem.uniqueId;
+            _categoryId = comboBoxItem.value;
         }
 
         private async void SaveButton_Click(object sender, EventArgs e)
         {
             progressBar.Value = 100;
-            Dictionary<string, string> post = PostDictionary.Dish(NameDish, "0",_categoryId, CodeDish, "");
+            string base64Image = Base64Controller.ConvertImageToBase64(ImageDish);
+            Dictionary<string, string> post = PostDictionary.Dish(NameDish, "0", _categoryId, CodeDish, base64Image);
             string json = await WebServiceController.Post(URLWebService.Post.dish, post);
             ResponseModel responseModel = await JsonController.JsonConvertDeserializeAsync<ResponseModel>(json);
             
             if (responseModel.status != "Success")
             {
+                new AlertForm(false, "Gagal menyimpan", "Periksa kembali koneksi kamu").Show();
                 progressBar.Value = 0;
                 return;
             }
-
+            new AlertForm(true, "Tersimpan", "Hidangan telah tercatat").Show();
             Close();
+        }
+
+        private void openFileButton_Click(object sender, EventArgs e)
+        {
+            var openFile = openFileDialog.ShowDialog();
+            if (openFile != DialogResult.OK)
+            {
+                return;
+            }
+            ImageDish = Image.FromStream(openFileDialog.OpenFile());
         }
     }
 }

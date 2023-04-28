@@ -13,8 +13,15 @@ namespace PadangCyberApp.Classes.Controller
     {
         public async static Task<T> JsonConvertDeserializeAsync<T>(string json)
         {
-            T model = await new TaskFactory().StartNew(() => JsonConvert.DeserializeObject<T>(json));
-            return model;
+            try
+            {
+                var deserialize = await new TaskFactory().StartNew(() => JsonConvert.DeserializeObject<T>(json));
+                return deserialize;
+            }
+            catch
+            {
+            }
+            return default(T);
         }
 
         public static bool isJsonNull(string json)

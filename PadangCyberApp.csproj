@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Animate\FormAnimate.cs" />
+    <Compile Include="Classes\Controller\Base64Controller.cs" />
     <Compile Include="Classes\Fonts\MainFont.cs" />
     <Compile Include="Classes\Objects\ComboBoxItem.cs" />
     <Compile Include="Classes\Controller\FormController.cs" />
@@ -71,7 +72,7 @@
     <Compile Include="Model\CategoryModel.cs" />
     <Compile Include="Model\DishModel.cs" />
     <Compile Include="Model\ResponseModel.cs" />
-    <Compile Include="Model\OrderModel.cs" />
+    <Compile Include="Model\CustomerModel.cs" />
     <Compile Include="View\Forms\CategoryDescriptionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +215,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\dish.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\failed.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

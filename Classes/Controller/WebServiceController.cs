@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
+using System.Drawing;
+using System.IO;
 
 namespace PadangCyberApp.Classes.Controller
 {
@@ -22,6 +24,7 @@ namespace PadangCyberApp.Classes.Controller
             return responseString;
         }
 
+
         public static async Task<string> Get(string URL)
         {
             var response = await client.GetAsync(URL);
@@ -34,6 +37,12 @@ namespace PadangCyberApp.Classes.Controller
             var response = await client.DeleteAsync(URL);
             var responseString = await response.Content.ReadAsStringAsync();
             return responseString;
+        }
+
+        public static async Task<Stream> StreamImage(string URL)
+        {
+            var response = await client.GetAsync(URL);
+            return await response.Content.ReadAsStreamAsync();
         }
     }
 }

@@ -42,9 +42,10 @@ namespace PadangCyberApp.View.Forms
 
             if(responseModel.status != "Success")
             {
+                new AlertForm(false, "Gagal menyimpan", "Periksa kembali koneksi kamu").Show();
                 return;
             }
-
+            new AlertForm(true, "Terhapus", "Kategori telah dihapus").Show();
             Close();
         }
 

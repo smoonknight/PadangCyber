@@ -69,6 +69,7 @@ namespace PadangCyberApp.View.Forms
             this.UniqueIdTextbox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UniqueIdTextbox.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UniqueIdTextbox.Location = new System.Drawing.Point(80, 41);
+            this.UniqueIdTextbox.MaxLength = 4;
             this.UniqueIdTextbox.Name = "UniqueIdTextbox";
             this.UniqueIdTextbox.Size = new System.Drawing.Size(201, 30);
             this.UniqueIdTextbox.TabIndex = 4;

@@ -22,6 +22,15 @@ namespace PadangCyberApp.View.Forms
 
         private async void SaveButton_Click(object sender, EventArgs e)
         {
+            if (NameTextBox.Text == "")
+            {
+                return;
+            }
+            if (UniqueIdTextbox.Text == "")
+            {
+                return;
+            }
+
             ProgressBar.Value = 100;
             var values = PostDictionary.Category(NameTextBox.Text, UniqueIdTextbox.Text);
             string json = await WebServiceController.Post(URLWebService.Post.category, values);
@@ -29,8 +38,10 @@ namespace PadangCyberApp.View.Forms
             if (responseModel.status != "Success")
             {
                 ProgressBar.Value = 0;
+                new AlertForm(false, "Gagal menyimpan", "Periksa kembali koneksi kamu").Show();
                 return;
             }
+            new AlertForm(true, "Tersimpan", "Kategori telah disimpan").Show();
             Close();
         }
 

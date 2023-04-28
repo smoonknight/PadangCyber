@@ -132,6 +132,7 @@ namespace PadangCyberApp.View.Forms
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog";
+            this.openFileDialog.Filter = "BMP|*.bmp|GIF|*.gif|JPG|*.jpg;*.jpeg|PNG|*.png|TIFF|*.tif;*.tiff";
             // 
             // splitContainer1
             // 
@@ -192,6 +193,7 @@ namespace PadangCyberApp.View.Forms
             this.uniqueIdTextbox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uniqueIdTextbox.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uniqueIdTextbox.Location = new System.Drawing.Point(141, 102);
+            this.uniqueIdTextbox.MaxLength = 6;
             this.uniqueIdTextbox.Name = "uniqueIdTextbox";
             this.uniqueIdTextbox.Size = new System.Drawing.Size(365, 30);
             this.uniqueIdTextbox.TabIndex = 4;
@@ -214,6 +216,7 @@ namespace PadangCyberApp.View.Forms
             this.nameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nameTextBox.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameTextBox.Location = new System.Drawing.Point(141, 3);
+            this.nameTextBox.MaxLength = 30;
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(365, 30);
             this.nameTextBox.TabIndex = 2;
@@ -265,6 +268,7 @@ namespace PadangCyberApp.View.Forms
             this.openFileButton.TabIndex = 8;
             this.openFileButton.Text = "Pilih foto";
             this.openFileButton.UseVisualStyleBackColor = true;
+            this.openFileButton.Click += new System.EventHandler(this.openFileButton_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -304,9 +308,9 @@ namespace PadangCyberApp.View.Forms
             // 
             // dishPanel1
             // 
-            this.dishPanel1.Location = new System.Drawing.Point(106, 112);
+            this.dishPanel1.Location = new System.Drawing.Point(96, 105);
             this.dishPanel1.Name = "dishPanel1";
-            this.dishPanel1.Size = new System.Drawing.Size(75, 105);
+            this.dishPanel1.Size = new System.Drawing.Size(85, 115);
             this.dishPanel1.TabIndex = 0;
             // 
             // CreateDishForm

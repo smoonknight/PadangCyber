@@ -14,13 +14,13 @@ namespace PadangCyberApp.Classes.Strings
             {"uniqueId", uniqueId }
         };
 
-        public static Dictionary<string, string> Dish(string name, string amount, string categoryId, string uniqueId, string photoURL) => new Dictionary<string, string>()
+        public static Dictionary<string, string> Dish(string name, string amount, string categoryId, string uniqueId, string base64) => new Dictionary<string, string>()
         {
             {"name", name },
             {"amount", amount },
             {"categoryId", categoryId },
             {"uniqueId", uniqueId },
-            {"photoURL", photoURL }
+            {"base64", base64 }
         };
     }
 

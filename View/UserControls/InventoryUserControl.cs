@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,11 +43,12 @@ namespace PadangCyberApp.View.UserControls
             dishFlowLayoutPanel.Controls.Clear();
             foreach (var value in childrensOfDish)
             {
-                DishPanel dishButton = new DishPanel();
-                dishButton.Text = value.name;
-                dishButton.Text = value.categoryId + value.uniqueId;
-                dishButton.Click += new EventHandler(CategoryButton_Click);
-                dishFlowLayoutPanel.Controls.Add(dishButton);
+                DishPanel dishPanel = new DishPanel();
+                dishPanel.dishButton.BackgroundImage = Image.FromStream(await WebServiceController.StreamImage("http://127.0.0.1:8000" + value.photoURL));
+                dishPanel.nameDishCommonLabel.Text = value.name;
+                dishPanel.codeDishCommonLabel.Text = value.categoryId + value.uniqueId;
+                dishPanel.Click += new EventHandler(CategoryButton_Click);
+                dishFlowLayoutPanel.Controls.Add(dishPanel);
             }
         }
 
@@ -111,6 +113,11 @@ namespace PadangCyberApp.View.UserControls
         {
             CreateCategoryForm createCategoryForm = new CreateCategoryForm();
             createCategoryForm.ShowDialog();
+        }
+
+        private void createDishButton_Click(object sender, EventArgs e)
+        {
+            new CreateDishForm().ShowDialog();
         }
     }
 }

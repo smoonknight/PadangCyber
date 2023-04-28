@@ -41,10 +41,12 @@ namespace PadangCyberApp.View.Forms
             this.AlertPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.AlertPictureBox.BackColor = System.Drawing.Color.DarkRed;
+            this.AlertPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.AlertPictureBox.Image = global::PadangCyberApp.Properties.Resources.failed;
             this.AlertPictureBox.Location = new System.Drawing.Point(12, 12);
             this.AlertPictureBox.Name = "AlertPictureBox";
             this.AlertPictureBox.Size = new System.Drawing.Size(50, 50);
+            this.AlertPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.AlertPictureBox.TabIndex = 1;
             this.AlertPictureBox.TabStop = false;
             // 
@@ -81,6 +83,7 @@ namespace PadangCyberApp.View.Forms
             this.ConfirmButton.TabIndex = 4;
             this.ConfirmButton.Text = "Oke";
             this.ConfirmButton.UseVisualStyleBackColor = false;
+            this.ConfirmButton.Click += new System.EventHandler(this.ConfirmButton_Click);
             // 
             // AlertForm
             // 
@@ -95,6 +98,7 @@ namespace PadangCyberApp.View.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AlertForm";
             this.Text = "Form1";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.AlertForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AlertPictureBox)).EndInit();
             this.ResumeLayout(false);

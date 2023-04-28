@@ -37,7 +37,7 @@ namespace PadangCyberApp.View.UserControls
             this.label1 = new System.Windows.Forms.Label();
             this.dishTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.dishFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.createDishButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -134,7 +134,7 @@ namespace PadangCyberApp.View.UserControls
             this.dishTableLayoutPanel.ColumnCount = 1;
             this.dishTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.dishTableLayoutPanel.Controls.Add(this.dishFlowLayoutPanel, 0, 0);
-            this.dishTableLayoutPanel.Controls.Add(this.button1, 0, 1);
+            this.dishTableLayoutPanel.Controls.Add(this.createDishButton, 0, 1);
             this.dishTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dishTableLayoutPanel.Location = new System.Drawing.Point(0, 30);
             this.dishTableLayoutPanel.Name = "dishTableLayoutPanel";
@@ -161,19 +161,20 @@ namespace PadangCyberApp.View.UserControls
             this.dishFlowLayoutPanel.Size = new System.Drawing.Size(386, 374);
             this.dishFlowLayoutPanel.TabIndex = 3;
             // 
-            // button1
+            // createDishButton
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(59)))), ((int)(((byte)(90)))));
-            this.button1.Location = new System.Drawing.Point(3, 383);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(386, 34);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Buat hidangan baru";
-            this.button1.UseVisualStyleBackColor = false;
+            this.createDishButton.BackColor = System.Drawing.Color.White;
+            this.createDishButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.createDishButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createDishButton.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createDishButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(59)))), ((int)(((byte)(90)))));
+            this.createDishButton.Location = new System.Drawing.Point(3, 383);
+            this.createDishButton.Name = "createDishButton";
+            this.createDishButton.Size = new System.Drawing.Size(386, 34);
+            this.createDishButton.TabIndex = 2;
+            this.createDishButton.Text = "Buat hidangan baru";
+            this.createDishButton.UseVisualStyleBackColor = false;
+            this.createDishButton.Click += new System.EventHandler(this.createDishButton_Click);
             // 
             // panel2
             // 
@@ -229,7 +230,7 @@ namespace PadangCyberApp.View.UserControls
         private System.Windows.Forms.Button CreateCategoryButton;
         private System.Windows.Forms.FlowLayoutPanel categoryFlowLayoutPanel;
         private System.Windows.Forms.TableLayoutPanel dishTableLayoutPanel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button createDishButton;
         private System.Windows.Forms.FlowLayoutPanel dishFlowLayoutPanel;
     }
 }

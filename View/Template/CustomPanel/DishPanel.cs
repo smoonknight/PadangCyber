@@ -19,12 +19,12 @@ namespace PadangCyberApp.View.Template.CustomPanel
         {
             Margin = new Padding(3);
             Padding = new Padding(0);
-            Size = new Size(75, 105);
+            Size = new Size(85, 115);
 
             dishButton.BackColor = Color.White;
             dishButton.BackgroundImage = Resources.dish;
             dishButton.BackgroundImageLayout = ImageLayout.Stretch;
-            dishButton.Size = new Size(75, 75);
+            dishButton.Size = new Size(85, 85);
 
             nameDishCommonLabel.Margin = new Padding(0);
             nameDishCommonLabel.Size = new Size(15, 15);

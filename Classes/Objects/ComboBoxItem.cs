@@ -8,19 +8,19 @@ namespace PadangCyberApp.Classes.Objects
 {
     class ComboBoxItem : Object
     {
-        public string Value;
-        public string Text;
+        public string value;
+        public string text;
         public string uniqueId;
         public ComboBoxItem(string value, string _uniqueId, string text)
         {
-            Value = value;
+            this.value = value;
             uniqueId = _uniqueId;
-            Text = text;
+            this.text = text;
         }
 
         public override string ToString()
         {
-            return Text;
+            return text;
         }
     }
 }
