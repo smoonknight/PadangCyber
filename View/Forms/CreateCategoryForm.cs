@@ -1,4 +1,4 @@
-﻿using PadangCyberApp.Classes.Controller;
+﻿using PadangCyberApp.Controller;
 using PadangCyberApp.Classes.Strings;
 using PadangCyberApp.Model;
 using System;
@@ -24,24 +24,32 @@ namespace PadangCyberApp.View.Forms
         {
             if (NameTextBox.Text == "")
             {
+                new AlertForm(false, "kesalahan", "nama atau kode kosong, harap diisi").Show();
+
                 return;
             }
             if (UniqueIdTextbox.Text == "")
             {
+                new AlertForm(false, "kesalahan", "nama atau kode kosong, harap diisi").Show();
+
                 return;
             }
 
-            ProgressBar.Value = 100;
+            ProgressBar.Value = 0;
             var values = PostDictionary.Category(NameTextBox.Text, UniqueIdTextbox.Text);
+            ProgressBar.Value = 25;
             string json = await WebServiceController.Post(URLWebService.Post.category, values);
+            ProgressBar.Value = 100;
             ResponseModel responseModel = await JsonController.JsonConvertDeserializeAsync<ResponseModel>(json);
-            if (responseModel.status != "Success")
+            if (responseModel.status != "OK")
             {
                 ProgressBar.Value = 0;
-                new AlertForm(false, "Gagal menyimpan", "Periksa kembali koneksi kamu").Show();
+                new AlertForm(false, responseModel.status, responseModel.message).Show();
                 return;
             }
-            new AlertForm(true, "Tersimpan", "Kategori telah disimpan").Show();
+
+            new AlertForm(true, responseModel.status, responseModel.message).Show();
+
             Close();
         }
 

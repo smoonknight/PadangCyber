@@ -1,4 +1,5 @@
 ﻿using PadangCyberApp.Classes.Palette;
+using PadangCyberApp.View.Forms;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -24,9 +25,14 @@ namespace PadangCyberApp.View.Template.CustomPanel
             BackColor = ColorPalette.whiteBackColor;
             ForeColor = ColorPalette.blackForeColor;
             FlatStyle = FlatStyle.Standard;
-
+            Click += CategoryButton_Click;
         }
 
-
+        void CategoryButton_Click(object sender, EventArgs e)
+        {
+            CategoryButton categoryButton = sender as CategoryButton;
+            CategoryDescriptionForm categoryDescriptionForm = new CategoryDescriptionForm(categoryButton._uniqueId);
+            categoryDescriptionForm.ShowDialog();
+        }
     }
 }

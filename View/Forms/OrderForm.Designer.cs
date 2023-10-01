@@ -41,27 +41,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.CategoryFoodFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
+            this.dishFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.ProfitLabel = new System.Windows.Forms.Label();
@@ -72,18 +52,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.NameCustomerLabel = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.ListOrderPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.NumberOrderLabel = new System.Windows.Forms.Label();
+            this.numberQueueLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.NumberTableLabel = new System.Windows.Forms.Label();
+            this.numberTableLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dishPanel1 = new PadangCyberApp.View.Template.CustomPanel.DishPanel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.nameCustomerTextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -94,8 +74,6 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel7.SuspendLayout();
-            this.CategoryFoodFlowLayoutPanel.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -105,6 +83,7 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -194,7 +173,7 @@
             this.ListFoodTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.ListFoodTableLayoutPanel.Controls.Add(this.panel4, 0, 0);
             this.ListFoodTableLayoutPanel.Controls.Add(this.panel7, 0, 1);
-            this.ListFoodTableLayoutPanel.Controls.Add(this.flowLayoutPanel1, 0, 2);
+            this.ListFoodTableLayoutPanel.Controls.Add(this.dishFlowLayoutPanel, 0, 2);
             this.ListFoodTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ListFoodTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.ListFoodTableLayoutPanel.Name = "ListFoodTableLayoutPanel";
@@ -220,11 +199,14 @@
             // 
             this.SearchTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SearchTextBox.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchTextBox.ForeColor = System.Drawing.Color.Gray;
             this.SearchTextBox.Location = new System.Drawing.Point(29, 0);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(299, 27);
             this.SearchTextBox.TabIndex = 1;
-            this.SearchTextBox.Text = "Ayam bakar";
+            this.SearchTextBox.Text = "Cari nama hidangan ...";
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            this.SearchTextBox.Leave += new System.EventHandler(this.SearchTextBox_Leave);
             // 
             // pictureBox1
             // 
@@ -250,222 +232,20 @@
             // CategoryFoodFlowLayoutPanel
             // 
             this.CategoryFoodFlowLayoutPanel.AutoScroll = true;
-            this.CategoryFoodFlowLayoutPanel.Controls.Add(this.button1);
             this.CategoryFoodFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.CategoryFoodFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.CategoryFoodFlowLayoutPanel.Name = "CategoryFoodFlowLayoutPanel";
-            this.CategoryFoodFlowLayoutPanel.Size = new System.Drawing.Size(328, 49);
+            this.CategoryFoodFlowLayoutPanel.Size = new System.Drawing.Size(328, 29);
             this.CategoryFoodFlowLayoutPanel.TabIndex = 1;
             this.CategoryFoodFlowLayoutPanel.WrapContents = false;
             // 
-            // button1
+            // dishFlowLayoutPanel
             // 
-            this.button1.AutoSize = true;
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "DouchDouchDouch";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Controls.Add(this.button4);
-            this.flowLayoutPanel1.Controls.Add(this.button5);
-            this.flowLayoutPanel1.Controls.Add(this.dishPanel1);
-            this.flowLayoutPanel1.Controls.Add(this.button7);
-            this.flowLayoutPanel1.Controls.Add(this.button8);
-            this.flowLayoutPanel1.Controls.Add(this.button9);
-            this.flowLayoutPanel1.Controls.Add(this.button10);
-            this.flowLayoutPanel1.Controls.Add(this.button11);
-            this.flowLayoutPanel1.Controls.Add(this.button12);
-            this.flowLayoutPanel1.Controls.Add(this.button13);
-            this.flowLayoutPanel1.Controls.Add(this.button14);
-            this.flowLayoutPanel1.Controls.Add(this.button15);
-            this.flowLayoutPanel1.Controls.Add(this.button16);
-            this.flowLayoutPanel1.Controls.Add(this.button17);
-            this.flowLayoutPanel1.Controls.Add(this.button18);
-            this.flowLayoutPanel1.Controls.Add(this.button19);
-            this.flowLayoutPanel1.Controls.Add(this.button20);
-            this.flowLayoutPanel1.Controls.Add(this.button21);
-            this.flowLayoutPanel1.Controls.Add(this.button22);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 73);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(328, 422);
-            this.flowLayoutPanel1.TabIndex = 3;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(3, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 75);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(84, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 75);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(165, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 75);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(3, 114);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 75);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(84, 114);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 75);
-            this.button8.TabIndex = 10;
-            this.button8.Text = "button8";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(165, 114);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 75);
-            this.button9.TabIndex = 11;
-            this.button9.Text = "button9";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(246, 114);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 75);
-            this.button10.TabIndex = 12;
-            this.button10.Text = "button10";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(3, 195);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 75);
-            this.button11.TabIndex = 13;
-            this.button11.Text = "button11";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(84, 195);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 75);
-            this.button12.TabIndex = 14;
-            this.button12.Text = "button12";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(165, 195);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 75);
-            this.button13.TabIndex = 15;
-            this.button13.Text = "button13";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(246, 195);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 75);
-            this.button14.TabIndex = 16;
-            this.button14.Text = "button14";
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(3, 276);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(75, 75);
-            this.button15.TabIndex = 17;
-            this.button15.Text = "button15";
-            this.button15.UseVisualStyleBackColor = true;
-            // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(84, 276);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(75, 75);
-            this.button16.TabIndex = 18;
-            this.button16.Text = "button16";
-            this.button16.UseVisualStyleBackColor = true;
-            // 
-            // button17
-            // 
-            this.button17.Location = new System.Drawing.Point(165, 276);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(75, 75);
-            this.button17.TabIndex = 19;
-            this.button17.Text = "button17";
-            this.button17.UseVisualStyleBackColor = true;
-            // 
-            // button18
-            // 
-            this.button18.Location = new System.Drawing.Point(246, 276);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(75, 75);
-            this.button18.TabIndex = 20;
-            this.button18.Text = "button18";
-            this.button18.UseVisualStyleBackColor = true;
-            // 
-            // button19
-            // 
-            this.button19.Location = new System.Drawing.Point(3, 357);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(75, 75);
-            this.button19.TabIndex = 21;
-            this.button19.Text = "button19";
-            this.button19.UseVisualStyleBackColor = true;
-            // 
-            // button20
-            // 
-            this.button20.Location = new System.Drawing.Point(84, 357);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(75, 75);
-            this.button20.TabIndex = 22;
-            this.button20.Text = "button20";
-            this.button20.UseVisualStyleBackColor = true;
-            // 
-            // button21
-            // 
-            this.button21.Location = new System.Drawing.Point(165, 357);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(75, 75);
-            this.button21.TabIndex = 23;
-            this.button21.Text = "button21";
-            this.button21.UseVisualStyleBackColor = true;
-            // 
-            // button22
-            // 
-            this.button22.Location = new System.Drawing.Point(246, 357);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(75, 75);
-            this.button22.TabIndex = 24;
-            this.button22.Text = "button22";
-            this.button22.UseVisualStyleBackColor = true;
+            this.dishFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dishFlowLayoutPanel.Location = new System.Drawing.Point(3, 73);
+            this.dishFlowLayoutPanel.Name = "dishFlowLayoutPanel";
+            this.dishFlowLayoutPanel.Size = new System.Drawing.Size(328, 422);
+            this.dishFlowLayoutPanel.TabIndex = 3;
             // 
             // tableLayoutPanel2
             // 
@@ -501,12 +281,12 @@
             // 
             // ProfitLabel
             // 
-            this.ProfitLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ProfitLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProfitLabel.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProfitLabel.ForeColor = System.Drawing.Color.Black;
             this.ProfitLabel.Location = new System.Drawing.Point(53, 0);
             this.ProfitLabel.Name = "ProfitLabel";
-            this.ProfitLabel.Size = new System.Drawing.Size(237, 24);
+            this.ProfitLabel.Size = new System.Drawing.Size(405, 24);
             this.ProfitLabel.TabIndex = 3;
             this.ProfitLabel.Text = "Rp. ";
             this.ProfitLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -598,38 +378,12 @@
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.NameCustomerLabel);
-            this.panel9.Controls.Add(this.label8);
+            this.panel9.Controls.Add(this.tableLayoutPanel5);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(3, 33);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(458, 24);
             this.panel9.TabIndex = 7;
-            // 
-            // NameCustomerLabel
-            // 
-            this.NameCustomerLabel.AutoEllipsis = true;
-            this.NameCustomerLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NameCustomerLabel.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameCustomerLabel.ForeColor = System.Drawing.Color.Black;
-            this.NameCustomerLabel.Location = new System.Drawing.Point(125, 0);
-            this.NameCustomerLabel.Name = "NameCustomerLabel";
-            this.NameCustomerLabel.Size = new System.Drawing.Size(333, 24);
-            this.NameCustomerLabel.TabIndex = 4;
-            this.NameCustomerLabel.Text = "[name]";
-            this.NameCustomerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label8
-            // 
-            this.label8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label8.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(0, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(125, 24);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Nama Pelanggan : ";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel5
             // 
@@ -668,7 +422,7 @@
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.NumberOrderLabel);
+            this.panel10.Controls.Add(this.numberQueueLabel);
             this.panel10.Controls.Add(this.label7);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel10.Location = new System.Drawing.Point(232, 3);
@@ -676,17 +430,17 @@
             this.panel10.Size = new System.Drawing.Size(223, 18);
             this.panel10.TabIndex = 6;
             // 
-            // NumberOrderLabel
+            // numberQueueLabel
             // 
-            this.NumberOrderLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NumberOrderLabel.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumberOrderLabel.ForeColor = System.Drawing.Color.Black;
-            this.NumberOrderLabel.Location = new System.Drawing.Point(81, 0);
-            this.NumberOrderLabel.Name = "NumberOrderLabel";
-            this.NumberOrderLabel.Size = new System.Drawing.Size(142, 18);
-            this.NumberOrderLabel.TabIndex = 4;
-            this.NumberOrderLabel.Text = "0";
-            this.NumberOrderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.numberQueueLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numberQueueLabel.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numberQueueLabel.ForeColor = System.Drawing.Color.Black;
+            this.numberQueueLabel.Location = new System.Drawing.Point(81, 0);
+            this.numberQueueLabel.Name = "numberQueueLabel";
+            this.numberQueueLabel.Size = new System.Drawing.Size(142, 18);
+            this.numberQueueLabel.TabIndex = 4;
+            this.numberQueueLabel.Text = "0";
+            this.numberQueueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label7
             // 
@@ -702,7 +456,7 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.NumberTableLabel);
+            this.panel8.Controls.Add(this.numberTableLabel);
             this.panel8.Controls.Add(this.label5);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(3, 3);
@@ -710,17 +464,17 @@
             this.panel8.Size = new System.Drawing.Size(223, 18);
             this.panel8.TabIndex = 4;
             // 
-            // NumberTableLabel
+            // numberTableLabel
             // 
-            this.NumberTableLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NumberTableLabel.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumberTableLabel.ForeColor = System.Drawing.Color.Black;
-            this.NumberTableLabel.Location = new System.Drawing.Point(77, 0);
-            this.NumberTableLabel.Name = "NumberTableLabel";
-            this.NumberTableLabel.Size = new System.Drawing.Size(146, 18);
-            this.NumberTableLabel.TabIndex = 4;
-            this.NumberTableLabel.Text = "0";
-            this.NumberTableLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.numberTableLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numberTableLabel.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numberTableLabel.ForeColor = System.Drawing.Color.Black;
+            this.numberTableLabel.Location = new System.Drawing.Point(77, 0);
+            this.numberTableLabel.Name = "numberTableLabel";
+            this.numberTableLabel.Size = new System.Drawing.Size(146, 18);
+            this.numberTableLabel.TabIndex = 4;
+            this.numberTableLabel.Text = "0";
+            this.numberTableLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
             // 
@@ -734,12 +488,46 @@
             this.label5.Text = "No. Meja : ";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // dishPanel1
+            // tableLayoutPanel5
             // 
-            this.dishPanel1.Location = new System.Drawing.Point(246, 3);
-            this.dishPanel1.Name = "dishPanel1";
-            this.dishPanel1.Size = new System.Drawing.Size(75, 105);
-            this.dishPanel1.TabIndex = 25;
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Controls.Add(this.nameCustomerTextBox, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label8, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(458, 24);
+            this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label8.Location = new System.Drawing.Point(3, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(134, 24);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Nama Pelanggan : ";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // nameCustomerTextBox
+            // 
+            this.nameCustomerTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nameCustomerTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nameCustomerTextBox.Font = new System.Drawing.Font("Century Schoolbook", 9.75F);
+            this.nameCustomerTextBox.ForeColor = System.Drawing.Color.Black;
+            this.nameCustomerTextBox.Location = new System.Drawing.Point(143, 5);
+            this.nameCustomerTextBox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.nameCustomerTextBox.Name = "nameCustomerTextBox";
+            this.nameCustomerTextBox.Size = new System.Drawing.Size(312, 16);
+            this.nameCustomerTextBox.TabIndex = 11;
             // 
             // OrderForm
             // 
@@ -767,9 +555,6 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel7.ResumeLayout(false);
-            this.CategoryFoodFlowLayoutPanel.ResumeLayout(false);
-            this.CategoryFoodFlowLayoutPanel.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -779,6 +564,8 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -799,30 +586,10 @@
         private System.Windows.Forms.TextBox SearchTextBox;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.FlowLayoutPanel CategoryFoodFlowLayoutPanel;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.FlowLayoutPanel dishFlowLayoutPanel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label NumberTableLabel;
+        private System.Windows.Forms.Label numberTableLabel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label ProfitLabel;
@@ -833,12 +600,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label NameCustomerLabel;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label NumberOrderLabel;
+        private System.Windows.Forms.Label numberQueueLabel;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel ListOrderPanel;
-        private Template.CustomPanel.DishPanel dishPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox nameCustomerTextBox;
     }
 }

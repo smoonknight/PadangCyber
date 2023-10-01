@@ -56,9 +56,8 @@ namespace PadangCyberApp.View.Forms
             this.titleCommonLabel.Font = new System.Drawing.Font("Century Schoolbook", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleCommonLabel.Location = new System.Drawing.Point(82, 25);
             this.titleCommonLabel.Name = "titleCommonLabel";
-            this.titleCommonLabel.Size = new System.Drawing.Size(177, 25);
+            this.titleCommonLabel.Size = new System.Drawing.Size(0, 25);
             this.titleCommonLabel.TabIndex = 2;
-            this.titleCommonLabel.Text = "commonLabel1";
             // 
             // messageCommonLabel
             // 
@@ -68,7 +67,6 @@ namespace PadangCyberApp.View.Forms
             this.messageCommonLabel.Name = "messageCommonLabel";
             this.messageCommonLabel.Size = new System.Drawing.Size(376, 58);
             this.messageCommonLabel.TabIndex = 3;
-            this.messageCommonLabel.Text = "commonLabel2";
             // 
             // ConfirmButton
             // 

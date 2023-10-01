@@ -136,6 +136,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "DashboardUserControl";
             this.Size = new System.Drawing.Size(800, 450);
+            this.Load += new System.EventHandler(this.DashboardUserControl_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

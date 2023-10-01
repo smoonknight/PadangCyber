@@ -5,10 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PadangCyberApp.Classes.Controller
+namespace PadangCyberApp.Controller
 {
-    internal class FormController
+    class FormController
     {
+
+        public static MainForm mainForm;
+
         public static void CloseProgram()
         {
             Application.Exit();
@@ -27,5 +30,6 @@ namespace PadangCyberApp.Classes.Controller
         {
             return FormWindowState.Maximized;
         }
+
     }
 }

@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 using PadangCyberApp.Model;
 
-namespace PadangCyberApp.Classes.Controller
+namespace PadangCyberApp.Controller
 {
     class JsonController
     {
@@ -18,18 +18,22 @@ namespace PadangCyberApp.Classes.Controller
                 var deserialize = await new TaskFactory().StartNew(() => JsonConvert.DeserializeObject<T>(json));
                 return deserialize;
             }
-            catch
+            catch (Exception ex)
             {
+                throw new Exception("Terjadi kesalahan saat melakukan deserialisasi JSON.\n" + json, ex);
             }
-            return default(T);
         }
+
+
+
 
         public static bool isJsonNull(string json)
         {
-            if (json == "{}")
+            if (json == "{}" || json == null)
             {
                 return true;
             }
+
             return false;
         }
     }

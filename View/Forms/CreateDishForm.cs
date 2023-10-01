@@ -1,4 +1,4 @@
-﻿using PadangCyberApp.Classes.Controller;
+﻿using PadangCyberApp.Controller;
 using PadangCyberApp.Classes.Strings;
 using PadangCyberApp.Classes.Objects;
 using PadangCyberApp.Model;
@@ -16,87 +16,27 @@ namespace PadangCyberApp.View.Forms
 {
     public partial class CreateDishForm : Form
     {
-        string _categoryUniqueId;
-
-        string _categoryId;
-
-        string CategoryUniqueId
-        {
-            get
-            {
-                return _categoryUniqueId;
-            }
-            set
-            {
-                string codeProduct = value + _codeDish;
-                dishPanel1.codeDishCommonLabel.Text = codeProduct;
-                _categoryUniqueId = value;
-            }
-        }
-
-        string _nameDish;
-
-        string NameDish
-        {
-            get
-            {
-                return _nameDish;
-            }
-            set
-            {
-                dishPanel1.nameDishCommonLabel.Text = value;
-                _nameDish = value;
-            }
-        }
-
-        string _codeDish;
-        string CodeDish
-        {
-            get
-            {
-                return _codeDish;
-            }
-            set
-            {
-                string codeProduct = _categoryUniqueId + value;
-                dishPanel1.codeDishCommonLabel.Text = codeProduct;
-                _codeDish = value;
-            }
-        }
-
-        Image _imageDish;
-        Image ImageDish
-        {
-            get
-            {
-                return _imageDish;
-            }
-            set
-            {
-                dishPanel1.dishButton.BackgroundImage = value;
-                _imageDish = value;
-            }
-        }
+        string _categoryUid;
 
         public CreateDishForm(string categoryId = null)
         {
             InitializeComponent();
-            _categoryId = categoryId;
+            _categoryUid = categoryId;
         }
 
         private async void CreateDishForm_Load(object sender, EventArgs e)
         {
             string json;
             ComboBoxItem comboBoxItem;
-            if (_categoryId != null)
+            if (_categoryUid != null)
             {
-                json = await WebServiceController.Get($"{URLWebService.Get.category}/{_categoryId}");
+                json = await WebServiceController.Get($"{URLWebService.Get.category}/{_categoryUid}");
                 CategoryModel categoryModel = await JsonController.JsonConvertDeserializeAsync<CategoryModel>(json);
 
-                categoryComboBox.Items.Add(new ComboBoxItem(categoryModel.categoryId, categoryModel.uniqueId,$"{categoryModel.name} - {categoryModel.uniqueId}"));
+                categoryComboBox.Items.Add(new ComboBoxItem(categoryModel.uid, categoryModel.codeCategory, $"{categoryModel.name} - {categoryModel.codeCategory}"));
                 categoryComboBox.SelectedIndex = 0;
                 comboBoxItem = categoryComboBox.SelectedItem as ComboBoxItem;
-                _categoryId = comboBoxItem.value;
+                _categoryUid = comboBoxItem.uid;
                 return;
             }
             json = await WebServiceController.Get(URLWebService.Get.category);
@@ -104,42 +44,47 @@ namespace PadangCyberApp.View.Forms
 
             foreach (var categoryModel in childrensOfCategory)
             {
-                categoryComboBox.Items.Add(new ComboBoxItem(categoryModel.categoryId, categoryModel.uniqueId, $"{categoryModel.name} - {categoryModel.uniqueId}"));
+                categoryComboBox.Items.Add(new ComboBoxItem(categoryModel.uid, categoryModel.codeCategory, $"{categoryModel.name} - {categoryModel.codeCategory}"));
             }
             categoryComboBox.SelectedIndex = 0;
             comboBoxItem = categoryComboBox.SelectedItem as ComboBoxItem;
-            ImageDish = dishPanel1.dishButton.BackgroundImage;
-            _categoryId = comboBoxItem.value;
+            _categoryUid = comboBoxItem.uid;
         }
 
         private void NameTextBox_TextChanged(object sender, EventArgs e)
         {
             TextBox textBox = sender as TextBox;
-            NameDish = textBox.Text;
+            dishPanel.nameDish = textBox.Text;
         }
 
         private void UniqueIdTextbox_TextChanged(object sender, EventArgs e)
         {
             TextBox textBox = sender as TextBox;
-            CodeDish = textBox.Text;
+            dishPanel.codeDish = textBox.Text;
         }
 
         private void CategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBoxItem comboBoxItem = categoryComboBox.SelectedItem as ComboBoxItem;
-            CategoryUniqueId = comboBoxItem.uniqueId;
-            _categoryId = comboBoxItem.value;
+            dishPanel.codeCategory = comboBoxItem.codeCategory;
+            _categoryUid = comboBoxItem.uid;
         }
 
         private async void SaveButton_Click(object sender, EventArgs e)
         {
             progressBar.Value = 100;
-            string base64Image = Base64Controller.ConvertImageToBase64(ImageDish);
-            Dictionary<string, string> post = PostDictionary.Dish(NameDish, "0", _categoryId, CodeDish, base64Image);
+            string categoryId = _categoryUid;
+            string codeDish = codeDishTextbox.Text;
+            string nameDish = nameTextBox.Text;
+            string unitPrice = unitPriceTextBox.Text;
+
+            //byte[] imageData = ImageController.ImageToByteConverter(dishPanel.dishButton.BackgroundImage);
+
+            Dictionary<string, string> post = PostDictionary.Dish(categoryId, codeDish, nameDish, unitPrice);
             string json = await WebServiceController.Post(URLWebService.Post.dish, post);
             ResponseModel responseModel = await JsonController.JsonConvertDeserializeAsync<ResponseModel>(json);
-            
-            if (responseModel.status != "Success")
+
+            if (responseModel.status != "OK")
             {
                 new AlertForm(false, "Gagal menyimpan", "Periksa kembali koneksi kamu").Show();
                 progressBar.Value = 0;
@@ -151,12 +96,13 @@ namespace PadangCyberApp.View.Forms
 
         private void openFileButton_Click(object sender, EventArgs e)
         {
-            var openFile = openFileDialog.ShowDialog();
+/*            var openFile = openFileDialog.ShowDialog();
             if (openFile != DialogResult.OK)
             {
                 return;
             }
-            ImageDish = Image.FromStream(openFileDialog.OpenFile());
+
+            ImageDish = Image.FromStream(openFileDialog.OpenFile());*/
         }
     }
 }

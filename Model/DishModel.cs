@@ -6,13 +6,19 @@ using System.Threading.Tasks;
 
 namespace PadangCyberApp.Model
 {
-    class DishModel
+    public class DishModel : Model, IModel
     {
+        public string uid { get; set; }
+        public string categoryUid { get; set; }
+        public string codeDish { get; set; }
         public string name { get; set; }
-        public string amount { get; set; }
-        public string categoryId { get; set; }
-        public string uniqueId { get; set; }
-        public string dishId { get; set; }
+        public string unitPrice { get; set; }
         public string photoURL { get; set; }
+        public string codeCategory { get; set; }
+
+        public void LastUpdated(DateTime dateTime)
+        {
+            lastUpdated = dateTime;
+        }
     }
 }

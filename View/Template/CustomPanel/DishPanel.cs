@@ -15,6 +15,45 @@ namespace PadangCyberApp.View.Template.CustomPanel
         public Button dishButton = new Button();
         public CommonLabel nameDishCommonLabel = new CommonLabel(8);
         public CommonLabel codeDishCommonLabel = new CommonLabel(8);
+        private string _nameDish;
+        public string nameDish
+        {
+            get
+            {
+                return _nameDish;
+            }
+            set
+            {
+                _nameDish = value;
+                nameDishCommonLabel.Text = value;
+            }
+        }
+        private string _codeDish;
+        public string codeDish
+        {
+            get
+            {
+                return _codeDish;
+            }
+            set
+            {
+                _codeDish = value;
+                codeDishCommonLabel.Text = _codeCategory + value;
+            }
+        }
+        private string _codeCategory;
+        public string codeCategory
+        {
+            get
+            {
+                return _codeCategory;
+            }
+            set
+            {
+                _codeCategory = value;
+                codeDishCommonLabel.Text = value + _codeDish;
+            }
+        }
         public DishPanel()
         {
             Margin = new Padding(3);

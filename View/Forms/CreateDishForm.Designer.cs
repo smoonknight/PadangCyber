@@ -38,18 +38,20 @@ namespace PadangCyberApp.View.Forms
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.uniqueIdTextbox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.codeDishTextbox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.categoryComboBox = new System.Windows.Forms.ComboBox();
             this.openFileButton = new System.Windows.Forms.Button();
+            this.categoryComboBox = new System.Windows.Forms.ComboBox();
+            this.unitPriceTextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.commonLabel1 = new PadangCyberApp.View.Template.CustomLabel.CommonLabel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dishPanel1 = new PadangCyberApp.View.Template.CustomPanel.DishPanel();
+            this.commonLabel6 = new PadangCyberApp.View.Template.CustomLabel.CommonLabel();
+            this.commonLabel5 = new PadangCyberApp.View.Template.CustomLabel.CommonLabel();
+            this.commonLabel4 = new PadangCyberApp.View.Template.CustomLabel.CommonLabel();
+            this.codeDishCommonLabel = new PadangCyberApp.View.Template.CustomLabel.CommonLabel();
+            this.commonLabel2 = new PadangCyberApp.View.Template.CustomLabel.CommonLabel();
+            this.commonLabel1 = new PadangCyberApp.View.Template.CustomLabel.CommonLabel();
+            this.dishPanel = new PadangCyberApp.View.Template.CustomPanel.DishPanel();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -157,59 +159,38 @@ namespace PadangCyberApp.View.Forms
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.27273F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.72727F));
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.uniqueIdTextbox, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.commonLabel6, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.commonLabel5, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.commonLabel4, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.codeDishCommonLabel, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.codeDishTextbox, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.nameTextBox, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.categoryComboBox, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.openFileButton, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.openFileButton, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.categoryComboBox, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.unitPriceTextBox, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.commonLabel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(509, 396);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
-            // label4
+            // codeDishTextbox
             // 
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(59)))), ((int)(((byte)(90)))));
-            this.label4.Location = new System.Drawing.Point(3, 297);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 99);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Foto";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // uniqueIdTextbox
-            // 
-            this.uniqueIdTextbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uniqueIdTextbox.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uniqueIdTextbox.Location = new System.Drawing.Point(141, 102);
-            this.uniqueIdTextbox.MaxLength = 6;
-            this.uniqueIdTextbox.Name = "uniqueIdTextbox";
-            this.uniqueIdTextbox.Size = new System.Drawing.Size(365, 30);
-            this.uniqueIdTextbox.TabIndex = 4;
-            this.uniqueIdTextbox.TextChanged += new System.EventHandler(this.UniqueIdTextbox_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(59)))), ((int)(((byte)(90)))));
-            this.label2.Location = new System.Drawing.Point(3, 99);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 99);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Kode";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.codeDishTextbox.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codeDishTextbox.Location = new System.Drawing.Point(141, 82);
+            this.codeDishTextbox.MaxLength = 6;
+            this.codeDishTextbox.Name = "codeDishTextbox";
+            this.codeDishTextbox.Size = new System.Drawing.Size(365, 30);
+            this.codeDishTextbox.TabIndex = 4;
+            this.codeDishTextbox.TextChanged += new System.EventHandler(this.UniqueIdTextbox_TextChanged);
             // 
             // nameTextBox
             // 
@@ -222,53 +203,39 @@ namespace PadangCyberApp.View.Forms
             this.nameTextBox.TabIndex = 2;
             this.nameTextBox.TextChanged += new System.EventHandler(this.NameTextBox_TextChanged);
             // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(59)))), ((int)(((byte)(90)))));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 99);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nama hidangan";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label3
-            // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(59)))), ((int)(((byte)(90)))));
-            this.label3.Location = new System.Drawing.Point(3, 198);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(132, 99);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Kategori";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // categoryComboBox
-            // 
-            this.categoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.categoryComboBox.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.categoryComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(59)))), ((int)(((byte)(90)))));
-            this.categoryComboBox.FormattingEnabled = true;
-            this.categoryComboBox.Location = new System.Drawing.Point(141, 201);
-            this.categoryComboBox.Name = "categoryComboBox";
-            this.categoryComboBox.Size = new System.Drawing.Size(201, 31);
-            this.categoryComboBox.TabIndex = 7;
-            this.categoryComboBox.SelectedIndexChanged += new System.EventHandler(this.CategoryComboBox_SelectedIndexChanged);
-            // 
             // openFileButton
             // 
             this.openFileButton.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.openFileButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(59)))), ((int)(((byte)(90)))));
-            this.openFileButton.Location = new System.Drawing.Point(141, 300);
+            this.openFileButton.Location = new System.Drawing.Point(141, 319);
             this.openFileButton.Name = "openFileButton";
             this.openFileButton.Size = new System.Drawing.Size(201, 28);
             this.openFileButton.TabIndex = 8;
             this.openFileButton.Text = "Pilih foto";
             this.openFileButton.UseVisualStyleBackColor = true;
             this.openFileButton.Click += new System.EventHandler(this.openFileButton_Click);
+            // 
+            // categoryComboBox
+            // 
+            this.categoryComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.categoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.categoryComboBox.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categoryComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(59)))), ((int)(((byte)(90)))));
+            this.categoryComboBox.FormattingEnabled = true;
+            this.categoryComboBox.Location = new System.Drawing.Point(141, 240);
+            this.categoryComboBox.Name = "categoryComboBox";
+            this.categoryComboBox.Size = new System.Drawing.Size(365, 31);
+            this.categoryComboBox.TabIndex = 7;
+            this.categoryComboBox.SelectedIndexChanged += new System.EventHandler(this.CategoryComboBox_SelectedIndexChanged);
+            // 
+            // unitPriceTextBox
+            // 
+            this.unitPriceTextBox.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unitPriceTextBox.Location = new System.Drawing.Point(141, 161);
+            this.unitPriceTextBox.MaxLength = 6;
+            this.unitPriceTextBox.Name = "unitPriceTextBox";
+            this.unitPriceTextBox.Size = new System.Drawing.Size(365, 30);
+            this.unitPriceTextBox.TabIndex = 9;
             // 
             // tableLayoutPanel3
             // 
@@ -285,6 +252,75 @@ namespace PadangCyberApp.View.Forms
             this.tableLayoutPanel3.Size = new System.Drawing.Size(287, 396);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dishPanel);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(3, 35);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(281, 358);
+            this.panel3.TabIndex = 1;
+            // 
+            // commonLabel6
+            // 
+            this.commonLabel6.AutoSize = true;
+            this.commonLabel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.commonLabel6.Font = new System.Drawing.Font("Century Schoolbook", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.commonLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(59)))), ((int)(((byte)(90)))));
+            this.commonLabel6.Location = new System.Drawing.Point(3, 316);
+            this.commonLabel6.Name = "commonLabel6";
+            this.commonLabel6.Size = new System.Drawing.Size(132, 80);
+            this.commonLabel6.TabIndex = 14;
+            this.commonLabel6.Text = "Foto hidangan";
+            // 
+            // commonLabel5
+            // 
+            this.commonLabel5.AutoSize = true;
+            this.commonLabel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.commonLabel5.Font = new System.Drawing.Font("Century Schoolbook", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.commonLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(59)))), ((int)(((byte)(90)))));
+            this.commonLabel5.Location = new System.Drawing.Point(3, 237);
+            this.commonLabel5.Name = "commonLabel5";
+            this.commonLabel5.Size = new System.Drawing.Size(132, 79);
+            this.commonLabel5.TabIndex = 13;
+            this.commonLabel5.Text = "Kategori";
+            // 
+            // commonLabel4
+            // 
+            this.commonLabel4.AutoSize = true;
+            this.commonLabel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.commonLabel4.Font = new System.Drawing.Font("Century Schoolbook", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.commonLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(59)))), ((int)(((byte)(90)))));
+            this.commonLabel4.Location = new System.Drawing.Point(3, 158);
+            this.commonLabel4.Name = "commonLabel4";
+            this.commonLabel4.Size = new System.Drawing.Size(132, 79);
+            this.commonLabel4.TabIndex = 12;
+            this.commonLabel4.Text = "harga";
+            // 
+            // codeDishCommonLabel
+            // 
+            this.codeDishCommonLabel.AutoSize = true;
+            this.codeDishCommonLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.codeDishCommonLabel.Font = new System.Drawing.Font("Century Schoolbook", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codeDishCommonLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(59)))), ((int)(((byte)(90)))));
+            this.codeDishCommonLabel.Location = new System.Drawing.Point(3, 79);
+            this.codeDishCommonLabel.Name = "codeDishCommonLabel";
+            this.codeDishCommonLabel.Size = new System.Drawing.Size(132, 79);
+            this.codeDishCommonLabel.TabIndex = 11;
+            this.codeDishCommonLabel.Text = "Kode";
+            // 
+            // commonLabel2
+            // 
+            this.commonLabel2.AutoSize = true;
+            this.commonLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.commonLabel2.Font = new System.Drawing.Font("Century Schoolbook", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.commonLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(59)))), ((int)(((byte)(90)))));
+            this.commonLabel2.Location = new System.Drawing.Point(3, 0);
+            this.commonLabel2.Name = "commonLabel2";
+            this.commonLabel2.Size = new System.Drawing.Size(132, 79);
+            this.commonLabel2.TabIndex = 10;
+            this.commonLabel2.Text = "Nama hidangan";
+            // 
             // commonLabel1
             // 
             this.commonLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -297,21 +333,15 @@ namespace PadangCyberApp.View.Forms
             this.commonLabel1.Text = "Preview";
             this.commonLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel3
+            // dishPanel
             // 
-            this.panel3.Controls.Add(this.dishPanel1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 35);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(281, 358);
-            this.panel3.TabIndex = 1;
-            // 
-            // dishPanel1
-            // 
-            this.dishPanel1.Location = new System.Drawing.Point(96, 105);
-            this.dishPanel1.Name = "dishPanel1";
-            this.dishPanel1.Size = new System.Drawing.Size(85, 115);
-            this.dishPanel1.TabIndex = 0;
+            this.dishPanel.codeCategory = null;
+            this.dishPanel.codeDish = null;
+            this.dishPanel.Location = new System.Drawing.Point(96, 105);
+            this.dishPanel.Name = "dishPanel";
+            this.dishPanel.nameDish = null;
+            this.dishPanel.Size = new System.Drawing.Size(85, 115);
+            this.dishPanel.TabIndex = 0;
             // 
             // CreateDishForm
             // 
@@ -351,17 +381,19 @@ namespace PadangCyberApp.View.Forms
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox uniqueIdTextbox;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox codeDishTextbox;
         private System.Windows.Forms.TextBox nameTextBox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox categoryComboBox;
-        private System.Windows.Forms.Button openFileButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private Template.CustomLabel.CommonLabel commonLabel1;
         private System.Windows.Forms.Panel panel3;
-        private Template.CustomPanel.DishPanel dishPanel1;
+        private Template.CustomPanel.DishPanel dishPanel;
+        private Template.CustomLabel.CommonLabel commonLabel6;
+        private Template.CustomLabel.CommonLabel commonLabel5;
+        private Template.CustomLabel.CommonLabel commonLabel4;
+        private Template.CustomLabel.CommonLabel codeDishCommonLabel;
+        private System.Windows.Forms.Button openFileButton;
+        private System.Windows.Forms.ComboBox categoryComboBox;
+        private System.Windows.Forms.TextBox unitPriceTextBox;
+        private Template.CustomLabel.CommonLabel commonLabel2;
     }
 }

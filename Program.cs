@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PadangCyberApp.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,9 @@ namespace PadangCyberApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            MainForm mainForm = new MainForm();
+            FormController.mainForm = mainForm;
+            Application.Run(mainForm);
         }
     }
 }

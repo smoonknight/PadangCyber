@@ -1,4 +1,4 @@
-﻿using PadangCyberApp.Classes.Controller;
+﻿using PadangCyberApp.Controller;
 using PadangCyberApp.Classes.Strings;
 using PadangCyberApp.Model;
 using System;
@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PadangCyberApp.Sync;
 
 namespace PadangCyberApp.View.Forms
 {
@@ -27,12 +28,20 @@ namespace PadangCyberApp.View.Forms
             nameValueLabel.Text = "Tunggu sebentar ya...";
             codeValueLabel.Text = "Tunggu sebentar ya...";
             totalDishValueLabel.Text = "Tunggu sebentar ya...";
-            string json = await WebServiceController.Get($"{URLWebService.Get.category}/{_id}");
+            try
+            {
+                string json = await WebServiceController.Get($"{URLWebService.Get.category}/{_id}");
 
-            CategoryModel categoryModel = await JsonController.JsonConvertDeserializeAsync<CategoryModel>(json);
-            nameValueLabel.Text = categoryModel.name;
-            codeValueLabel.Text = categoryModel.uniqueId;
-            totalDishValueLabel.Text = "";
+                CategoryModel categoryModel = await JsonController.JsonConvertDeserializeAsync<CategoryModel>(json);
+                nameValueLabel.Text = categoryModel.name;
+                codeValueLabel.Text = categoryModel.codeCategory;
+                totalDishValueLabel.Text = categoryModel.totalDish;
+            }
+            catch
+            {
+                FormController.mainForm.NotificationLoader("Gagal memuat");
+                Close();
+            }
         }
 
         private async void DeleteButton_Click(object sender, EventArgs e)
@@ -40,12 +49,14 @@ namespace PadangCyberApp.View.Forms
             string json = await WebServiceController.Delete($"{URLWebService.Delete.category}/{_id}");
             ResponseModel responseModel = await JsonController.JsonConvertDeserializeAsync<ResponseModel>(json);
 
-            if(responseModel.status != "Success")
+            if (responseModel.status != "OK")
             {
-                new AlertForm(false, "Gagal menyimpan", "Periksa kembali koneksi kamu").Show();
+                new AlertForm(false, responseModel.status, responseModel.message).Show();
                 return;
             }
-            new AlertForm(true, "Terhapus", "Kategori telah dihapus").Show();
+            Synchronizer synchronizer = new Synchronizer();
+            await synchronizer.ForceUpdateCategory();
+            new AlertForm(true, responseModel.status, responseModel.message).Show();
             Close();
         }
 

@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace PadangCyberApp.Model
 {
-    public class ResponseModel
+    public interface IModel
     {
-        public string status { get; set; }
-        public string message { get; set; }
+        void LastUpdated(DateTime dateTime);
     }
 }

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PadangCyberApp.Classes.Controller
+namespace PadangCyberApp.Controller
 {
     class Base64Controller
     {

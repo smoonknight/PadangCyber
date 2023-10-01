@@ -8,100 +8,134 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PadangCyberApp.Classes.Controller;
+using PadangCyberApp.Controller;
 using PadangCyberApp.Classes.Strings;
 using PadangCyberApp.Model;
 using PadangCyberApp.View.Forms;
 using PadangCyberApp.View.Template.CustomPanel;
+using System.Threading;
+using PadangCyberApp.Interface;
 
 namespace PadangCyberApp.View.UserControls
 {
-    public partial class InventoryUserControl : UserControl
+    public partial class InventoryUserControl : UserControl, IUserControl
     {
+        private DateTime prevDataDishLastUpdated;
+        private DateTime prevDataCategoryLastUpdated;
+
+        private CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+
         public InventoryUserControl()
         {
             InitializeComponent();
         }
-
-        async void AddCategoryToCategoryFlowLayoutPanel()
+        async Task AddCategoryToCategoryFlowLayoutPanel()
         {
-            string json = await WebServiceController.Get(URLWebService.Get.category);
-            CategoryModel[] childrensOfCategory = await JsonController.JsonConvertDeserializeAsync<CategoryModel[]>(json);
+            CancellationToken cancellationToken = cancellationTokenSource.Token;
+            categoryFlowLayoutPanel.SuspendLayout();
             categoryFlowLayoutPanel.Controls.Clear();
-            foreach (var value in childrensOfCategory)
+            Control[] controls = new Control[ModelController.DataCategoryModel.Length];
+            int counter = 0;
+            try
             {
-                CategoryButton categoryButton = new CategoryButton(value.uniqueId, value.name, value.categoryId);
-                categoryButton.Click += new EventHandler(CategoryButton_Click);
-                categoryFlowLayoutPanel.Controls.Add(categoryButton);
+                await Task.Run(() =>
+                {
+                    foreach (var value in ModelController.DataCategoryModel)
+                    {
+                        if (cancellationToken.IsCancellationRequested)
+                        {
+                            cancellationToken.ThrowIfCancellationRequested();
+                        }
+                        CategoryButton categoryButton = new CategoryButton(value.uid, value.name, value.codeCategory);
+                        controls[counter] = categoryButton;
+                        counter++;
+                    }
+                }, cancellationToken);
+                categoryFlowLayoutPanel.Controls.AddRange(controls);
+                categoryFlowLayoutPanel.ResumeLayout();
+            }
+            catch (OperationCanceledException)
+            {
+
             }
         }
 
-        async void AddDishToDishFlowLayoutPanel()
+        async Task AddDishToDishFlowLayoutPanel()
         {
-            string json = await WebServiceController.Get(URLWebService.Get.dish);
-            DishModel[] childrensOfDish = await JsonController.JsonConvertDeserializeAsync<DishModel[]>(json);
+            CancellationToken cancellationToken = cancellationTokenSource.Token;
+            dishFlowLayoutPanel.SuspendLayout();
             dishFlowLayoutPanel.Controls.Clear();
-            foreach (var value in childrensOfDish)
+            Control[] controls = new Control[ModelController.DataDishModel.Length];
+            int counter = 0;
+            try
             {
-                DishPanel dishPanel = new DishPanel();
-                dishPanel.dishButton.BackgroundImage = Image.FromStream(await WebServiceController.StreamImage("http://127.0.0.1:8000" + value.photoURL));
-                dishPanel.nameDishCommonLabel.Text = value.name;
-                dishPanel.codeDishCommonLabel.Text = value.categoryId + value.uniqueId;
-                dishPanel.Click += new EventHandler(CategoryButton_Click);
-                dishFlowLayoutPanel.Controls.Add(dishPanel);
+                await Task.Run(async () =>
+                {
+                    foreach (var value in ModelController.DataDishModel)
+                    {
+                        if (cancellationToken.IsCancellationRequested)
+                        {
+                            cancellationToken.ThrowIfCancellationRequested();
+                        }
+                        DishPanel dishPanel = new DishPanel();
+                        dishPanel.nameDishCommonLabel.Text = value.name;
+                        dishPanel.codeDishCommonLabel.Text = value.codeCategory + value.codeDish;
+                        controls[counter] = dishPanel;
+                        counter++;
+                    }
+                }, cancellationToken);
+                dishFlowLayoutPanel.Controls.AddRange(controls);
+                dishFlowLayoutPanel.ResumeLayout();
+            }
+            catch (OperationCanceledException)
+            {
+
             }
         }
 
-        async void SyncDish(int prevDishCount = 0)
+        async void SyncDish()
         {
-            await Task.Delay(3000);
-            string json = await WebServiceController.Get($"{URLWebService.Get.dish}/count");
-            if (JsonController.isJsonNull(json))
+            while (true)
             {
-                SyncDish(prevDishCount);
-                return;
+                if (ModelController.DataDishModel == null)
+                {
+                    await Task.Delay(1000);
+                    continue;
+                }
+                if (prevDataDishLastUpdated == ModelController.dataDishLastUpdated)
+                {
+                    await Task.Delay(1000);
+                    continue;
+                }
+
+                prevDataDishLastUpdated = ModelController.dataDishLastUpdated;
+                await AddDishToDishFlowLayoutPanel();
+                await Task.Delay(1000);
             }
-
-            int dishCount = await JsonController.JsonConvertDeserializeAsync<int>(json);
-            label2.Text = dishCount.ToString();
-
-            if (dishCount == prevDishCount)
-            {
-                SyncDish(prevDishCount);
-                return;
-            }
-
-            AddDishToDishFlowLayoutPanel();
-            SyncDish(dishCount);
         }
-        async void SyncCategory(int prevCategoryCount = 0)
+
+        async void SyncCategory()
         {
-            await Task.Delay(3000);
-            string json = await WebServiceController.Get($"{URLWebService.Get.category}/count");
-            if (JsonController.isJsonNull(json))
+            while (true)
             {
-                SyncCategory(prevCategoryCount);
-                return;
+                if (ModelController.DataCategoryModel == null)
+                {
+                    await Task.Delay(1000);
+                    continue;
+                }
+                if (prevDataCategoryLastUpdated == ModelController.dataCategoryLastUpdated)
+                {
+                    await Task.Delay(1000);
+                    continue;
+                }
+
+                prevDataCategoryLastUpdated = ModelController.dataCategoryLastUpdated;
+                await AddCategoryToCategoryFlowLayoutPanel();
+                await Task.Delay(1000);
             }
-
-            int categoryCount = await JsonController.JsonConvertDeserializeAsync<int>(json);
-            label1.Text = categoryCount.ToString();
-
-            if (categoryCount == prevCategoryCount)
-            {
-                SyncCategory(prevCategoryCount);
-                return;
-            }
-            AddCategoryToCategoryFlowLayoutPanel();
-            SyncCategory(categoryCount);
         }
-        void CategoryButton_Click(object sender, EventArgs e)
-        {
-            CategoryButton categoryButton = sender as CategoryButton;
-            CategoryDescriptionForm categoryDescriptionForm = new CategoryDescriptionForm(categoryButton._idTable);
-            categoryDescriptionForm.ShowDialog();
 
-        }
+
 
         private void InventoryUserControl_Load(object sender, EventArgs e)
         {
@@ -118,6 +152,11 @@ namespace PadangCyberApp.View.UserControls
         private void createDishButton_Click(object sender, EventArgs e)
         {
             new CreateDishForm().ShowDialog();
+        }
+
+        public void cancelationEvent()
+        {
+            cancellationTokenSource.Cancel();
         }
     }
 }

@@ -10,21 +10,23 @@ using PadangCyberApp.Classes.Palette;
 using PadangCyberApp.Classes.Strings;
 using System.Drawing.Printing;
 using PadangCyberApp.View.Forms;
+using PadangCyberApp.Controller;
 
 namespace PadangCyberApp.View.Template.CustomTableLayoutPanel
 {
     internal class OrderCardTableLayoutPanel : TableLayoutPanel
     {
-        Panel headerPanel;
-        Panel customerInfoPanel;
-        Panel orderInfoPanel;
-        PictureBox planPicture;
-        Label totalPriceLabel;
-        Label nameCustomerLabel;
-        Label numberTableLabel;
-        CommonLabel planLabel;
-        Label timeOrderLabel;
-        Label numberOrderLabel;
+        Panel headerPanel = new Panel();
+        Panel customerInfoPanel = new Panel();
+        Panel orderInfoPanel = new Panel();
+        PictureBox planPicture = new PictureBox();
+        Label totalPriceLabel = new Label();
+        Label nameCustomerLabel = new Label();
+        Label numberTableLabel = new Label();
+        CommonLabel planLabel = new CommonLabel();
+        Label timeOrderLabel = new Label();
+        Label numberOrderLabel = new Label();
+        string customerId;
         public OrderCardTableLayoutPanel
         (
             string ID,
@@ -53,13 +55,24 @@ namespace PadangCyberApp.View.Template.CustomTableLayoutPanel
             Controls.Add(headerPanel, 0, 0);
 
             #region content header
-            planPicture = new PictureBox();
-            planPicture.Size = new Size(50, 50);
-            planPicture.Dock = DockStyle.Left;
-            planPicture.BackgroundImage = ImageDictionary.dine[plan];
-            planPicture.BackgroundImageLayout = ImageLayout.Stretch;
-  
-            headerPanel.Controls.Add(planPicture);
+
+            try
+            {
+                planPicture = new PictureBox();
+                planPicture.Size = new Size(50, 50);
+                planPicture.Dock = DockStyle.Left;
+                planPicture.BackgroundImage = ImageDictionary.dine[plan];
+                planPicture.BackgroundImageLayout = ImageLayout.Stretch;
+                headerPanel.Controls.Add(planPicture);
+
+            }
+            catch (KeyNotFoundException)
+            {
+                CommonLabel planText = new CommonLabel(plan);
+                planText.Dock = DockStyle.Left;
+                planText.AutoSize = true;
+                headerPanel.Controls.Add(planText);
+            }
 
             totalPriceLabel = new CommonLabel(totalPrice, 12, FontStyle.Bold);
             totalPriceLabel.Dock = DockStyle.Fill;
@@ -120,17 +133,16 @@ namespace PadangCyberApp.View.Template.CustomTableLayoutPanel
 
             orderInfoPanel.Controls.Add(numberOrderLabel);
 
-            Tag = ID;
+            customerId = ID;
 
-            Click += new EventHandler(Submit_Click);
+            ControlController.InheritanceAllControlForClickEvents(Controls, Submit_Click);
         }
 
         public void Submit_Click(object sender, EventArgs e)
         {
-            TableLayoutPanel tableLayoutPanel = sender as TableLayoutPanel;
-
-            OrderForm orderForm = new OrderForm(tableLayoutPanel.Tag.ToString());
+            OrderForm orderForm = new OrderForm(customerId);
             orderForm.ShowDialog();
         }
+
     }
 }

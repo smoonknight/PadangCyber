@@ -17,5 +17,7 @@ C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\D
 C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.View.Forms.CreateCategoryForm.resources
 C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.View.Forms.CategoryDescriptionForm.resources
 C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.View.Forms.CreateDishForm.resources
-C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.csproj.AssemblyReference.cache
 C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.View.Forms.AlertForm.resources
+C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.View.Forms.NotificationForm.resources
+C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.View.UserControls.NotificationUserControl.resources
+C:\Users\Satria SMK\source\repos\PadangCyber\PadangCyberApp\PadangCyberApp\obj\Debug\PadangCyberApp.csproj.AssemblyReference.cache
